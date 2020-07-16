@@ -1,7 +1,7 @@
 {
-  "name": "sass-parcel-starter-kit",
+  "name": "ue-vuelta-al-campus",
   "version": "1.0.0",
-  "description": "Sass + Parcel Starter Kit",
+  "description": "UE — Vuelta al campus",
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
