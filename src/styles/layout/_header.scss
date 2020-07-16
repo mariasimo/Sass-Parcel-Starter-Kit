@@ -21,14 +21,15 @@
             }
 
             li {
-                font: 0.75rem Futura-Light, sans-serif;
+                font: 0.75rem $f_primary, sans-serif;
                 line-height: 0.9375rem;
                 padding: 0.75rem 1.5625rem;
                 color: #666;
                 border-left: 0.0625rem solid rgba(222, 56, 49, 0.15);
 
                 &.text-higlighted-blue {
-                    font: 0.75rem Futura-Bold, sans-serif;
+                    font: 0.75rem  $f_primary, sans-serif;
+                    font-weight: 600;
                     line-height: 0.9375rem;
                     color: #1173af;
                     text-transform: uppercase;
