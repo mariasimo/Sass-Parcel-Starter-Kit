@@ -1,7 +1,7 @@
 {
   "name": "sass-parcel-starter-kit",
   "version": "1.0.0",
-  "description": "How to use Parcel for a simple SCSS project",
+  "description": "Sass + Parcel Starter Kit",
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
@@ -12,6 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
+    "posthtml-include": "^1.4.3",
     "sass": "^1.26.10"
-  }
+  },
+  "dependencies": {}
 }
