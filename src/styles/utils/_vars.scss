@@ -1,9 +1,15 @@
+// Font family 
 $f_primary: 'Futura';
 $f_secondary: 'Muli', sans-serif;
 
 $lh_body: 1.3;
 $lh_large: 1.5;
 $lh_title: 1.2;
+
+$bold: 600;
+$medium: 500;
+$regular: 400;
+$light: 200;
 
 
 // Palette
@@ -57,3 +63,32 @@ $m: 2rem;
 $xm: 1.5rem;
 $s: 1rem;
 $xs: .5rem;
+
+
+
+// Responsive mixins 
+// Bootstrap breakpoints
+
+@mixin small {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+}
+  
+@mixin desktop {
+    @media only screen and (min-width: 992px) {
+      @content;
+    }
+}
+  
+@mixin large {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+}

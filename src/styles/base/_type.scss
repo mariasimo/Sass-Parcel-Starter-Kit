@@ -1,0 +1,247 @@
+// Title XL
+@mixin title_xl() {
+    font-family: $f_primary;
+    font-weight: $bold;
+    font-size: 50px;
+    line-height: 1.2;
+
+    @include small() {
+        font-size: 32px;
+    }
+}
+
+.title-xl {
+    @include title_xl();
+}
+
+// Title L
+@mixin title_l() {
+    font-family: $f_primary;
+    font-weight: $bold;
+    text-transform: uppercase;
+    font-size: 40px;
+    line-height: 1.2;
+
+    @include small() {
+        font-size: 24px;
+    }
+}
+
+.title-l {
+    @include title_l();
+}
+
+// Title M
+@mixin title_m() {
+    font-family: $f_primary;
+    font-weight: $bold;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 1.4;
+
+    @include small() {
+        font-size: 16px;
+    }
+}
+
+.title-m {
+    @include title_m();
+}
+
+// Title S
+@mixin title_s() {
+    font-family: $f_primary;
+    font-weight: $bold;
+    font-size: 20px;
+    line-height: 1.2;
+
+    @include small() {
+        font-size: 17px;
+    }
+}
+
+.title-s {
+    @include title_s();
+}
+
+// Title XS
+@mixin title_xs() {
+    font-family: $f_secondary;
+    font-weight: $regular;
+    font-size: 18px;
+    line-height: 1.4;
+
+    @include small() {
+        font-size: 17px;
+    }
+}
+
+.title-xs {
+    @include title_xs();
+}
+
+// Body XL
+@mixin body_xl() {
+    font-family: $f_secondary;
+    font-weight: $regular;
+    font-size: 24px;
+    line-height: 1.3;
+
+    @include small() {
+        font-size: 15px;
+        line-height: 1.35;
+    }
+}
+
+.body-xl {
+    @include body_xl();
+}
+
+// Body L
+@mixin body_l() {
+    font-family: $f_secondary;
+    font-weight: $regular;
+    font-size: 20px;
+    line-height: 1.5;
+
+    @include small() {
+        font-size: 17px;
+        line-height: 1.35;
+    }
+}
+
+.body-l {
+    @include body_l();
+}
+
+// Body M
+@mixin body_m() {
+    font-family: $f_secondary;
+    font-weight: $regular;
+    font-size: 16px;
+    line-height: 1.45;
+
+    @include small() {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+}
+
+.body-m {
+    @include body_m();
+}
+
+// Body M
+@mixin body_m() {
+    font-family: $f_secondary;
+    font-weight: $regular;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.body-m {
+    @include body_m();
+}
+
+// Body S
+@mixin body_s() {
+    font-family: $f_secondary;
+    font-weight: $regular;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.body-s {
+    @include body_s();
+}
+
+// Body XS
+@mixin body_xs() {
+    font-family: $f_secondary;
+    font-weight: $regular;
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+.body-xs {
+    @include body_xs();
+}
+
+// Caption
+@mixin caption() {
+    font-family: $f_primary;
+    font-weight: $bold;
+    font-size: 12px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.caption {
+    @include caption();
+}
+
+// Caption S
+@mixin caption_s() {
+    font-family: $f_primary;
+    font-weight: $bold;
+    font-size: 10px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.caption-s {
+    @include caption_s();
+}
+
+// Button
+@mixin button_text() {
+    font-family: $f_primary;
+    font-weight: $medium;
+    font-size: 10px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.button-text {
+    @include button_text();
+}
+
+// Navigation
+@mixin navigation() {
+    font-family: $f_primary;
+    font-weight: $medium;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.navigation-text {
+    @include navigation();
+}
+
+// Navigation L
+@mixin navigation_l() {
+    font-family: $f_primary;
+    font-weight: $bold;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.navigation-text-large {
+    @include navigation_l();
+}
+
+// Navigation S
+@mixin navigation_s() {
+    font-family: $f_primary;
+    font-weight: $medium;
+    font-size: 9px;
+    line-height: 1;
+}
+
+.navigation-text-large {
+    @include navigation_s();
+}
+
