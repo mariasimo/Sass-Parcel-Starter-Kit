@@ -2,6 +2,9 @@
     width: 100%;
 
     &.desktop-only {
+        .top-menu {
+            border-bottom: 1px solid $basic02;
+        }
         .top-menu__links {
             display: -webkit-box;
             display: -ms-flexbox;
@@ -18,25 +21,15 @@
             }
 
             li {
-                font: 0.75rem $f_primary, sans-serif;
-                line-height: 0.9375rem;
                 padding: 0.75rem 1.5625rem;
                 color: #666;
                 border-left: 0.0625rem solid rgba(222, 56, 49, 0.15);
 
-                &.text-higlighted-blue {
-                    font: 0.75rem  $f_primary, sans-serif;
-                    font-weight: 600;
-                    line-height: 0.9375rem;
-                    color: #1173af;
-                    text-transform: uppercase;
-                    letter-spacing: 0.5px;
-
-                    &.collapsible {
-                        padding: 0.75rem;
-                        min-width: 11.875rem;
-                    }
+                a {
+                    @include navigation_s();
                 }
+
+                
 
                 &.private-area-link {
                     padding: 0.75rem 1.5rem;
@@ -45,10 +38,95 @@
                 &.no-padding {
                     padding: 0;
                 }
+    
+                &.floated-right {
+    
+                    &.text-higlighted-blue a {
+                        @include navigation_l();
+                        line-height: 0.9375rem;
+                        color: #1173af;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                    }
+
+                    &.floated-right--lang {
+                        border-left: none;
+                        padding: .75rem 1.5625rem;
+                        padding-right: 1.25rem;
+                        width: 7.1875rem;
+                        
+                        .megamenu-mobile-submenu {
+                            width: 100%;
+
+                            .megamenu-mobile-submenu__content {
+                                overflow: hidden;
+                                max-height: 0;
+                            }
+                        
+                            .two-line-link {
+                                letter-spacing: 0;
+                                min-width: 0;
+                                margin: auto;
+                                height: auto;
+                                width: 100%;
+                                position: relative;
+                                display: block;
+                                text-align: left;
+                                padding: 0;
+
+                                span {
+                                    display: block;
+                                }
+                            }
+
+                            .megamenu-mobile-submenu__trigger{
+                                &.two-line-link span{
+                                    @include navigation_s();
+                                }
+    
+                                &:after {
+                                    content: "";
+                                    width: 1rem;
+                                    height: 1rem;
+                                    position: absolute;
+                                    right: 0;
+                                    top: calc(50% - 0.5rem);
+                                    background: url(/images/icons/icon-caret-down-blue.svg) no-repeat 0;
+                                    background-size: contain;
+                                }
+                            }
+                        }
+                            &.open {
+                                .megamenu-mobile-submenu__content {
+                                    padding-bottom: 0.9375rem;
+                                    border: 1px solid #f5f5f5;
+                                    border-top: none;
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    -webkit-box-flex: 1;
+                                    -ms-flex: 1;
+                                    flex: 1;
+                                    max-height: 125rem;
+                                    display: block;
+                                    overflow: visible;
+                                }
+                                .megamenu-mobile-submenu__trigger:after {
+                                    background: url(/images/icons/icon-caret-up-blue.svg) no-repeat 0;
+                                    background-size: contain;
+                                }
+                            }
+                        }
+                }
             }
         }
     }
 }
+
+
+
+
+
 
 @media only screen and (max-width: 78.75rem) {
     header .top-menu__links ul li {
@@ -66,6 +144,13 @@ header {
         -ms-flex-direction: row;
         flex-direction: row;
 
+        &.floated-left {
+            margin-right: auto;
+        }
+        &.floated-right {
+            margin-left: auto;
+        }
+
          li {
             -webkit-box-align: center;
             -ms-flex-align: center;
@@ -80,17 +165,60 @@ header {
                 padding: 0.75rem 0.625rem;
             }
 
-            &.icon-phone {
-                margin-right: 0.625rem;
 
-                &:after {        
-                    background-image: url(/images/icons/icon-phone.svg);
+            .icon {
+                position: relative;
+                display: inline-block;
+                min-width: 1.25rem;
+                min-height: 1.25rem;
+            }
+
+            .icon:after {
+                content: "";
+                background-repeat: no-repeat;
+                background-position: 50%;
+                background-size: contain;
+                display: inline-block;
+                width: 1.25rem;
+                height: 1.25rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .icon.icon-phone {
+                margin-right: 0.625rem;
+                height: 1.375rem;
+                width: 1.375rem;
+                position: relative;
+                display: inline-block;
+                min-width: 1.25rem;
+                border: 1px solid red;
+                min-height: 1.25rem;
+            }
+
+            .icon-phone:after {        
+                background-image: url(/images/icons/icon-phone.svg);
+            }
+
+
+            .top-menu__phone {
+                &:after {
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    bottom: -1px;
+                    width: calc(100% - 1.875rem);
+                    height: 1px;
+                    background-color: transparent;
+                    right: 0;
+                    -webkit-transition: .2s linear;
+                    transition: .2s linear;
                 }
             }
         }
     }
 }
-
 
 
 

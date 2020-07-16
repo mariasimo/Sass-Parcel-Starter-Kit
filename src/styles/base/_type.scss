@@ -236,12 +236,12 @@
 // Navigation S
 @mixin navigation_s() {
     font-family: $f_primary;
-    font-weight: $medium;
-    font-size: 9px;
+    font-weight: $light;
+    font-size: 12px;
     line-height: 1;
 }
 
-.navigation-text-large {
+.navigation-text-small {
     @include navigation_s();
 }
 
