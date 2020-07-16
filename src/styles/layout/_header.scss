@@ -2,8 +2,10 @@
     width: 100%;
     border: 1px solid red;
 
-    .desktop-only {
+    &.desktop-only {
         .top-menu__links {
+            border: 1px solid grey;
+
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
@@ -13,8 +15,6 @@
             flex-direction: row;
 
             ul {
-            border: 1px solid grey;
-
                 -webkit-box-pack: start;
                 -ms-flex-pack: start;
                 justify-content: flex-start;
@@ -52,14 +52,11 @@
     }
 }
 
-
-
 @media only screen and (max-width: 78.75rem) {
     header .top-menu__links ul li {
-        padding: 0.75rem;
+        padding: .75rem;
     }
 }
-
 
 header {
     ul {
