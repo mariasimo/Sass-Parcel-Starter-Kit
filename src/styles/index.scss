@@ -1,0 +1,24 @@
+// 7ish - 1 Pattern Structure 
+// https://vanseodesign.com/css/sass-directory-structures/#:~:text=The%20base%20folder%20holds%20boilerplate%20styles%20in%20the%20project%20folder,catchall%20for%20most%20everything%20else.
+
+// Utils
+@import './utils/vars';
+@import './utils/mixins';
+
+// Base
+@import './base/reset';
+@import './base/colors';
+@import './base/type';
+
+// Components
+@import './components/tabs';
+@import './components/buttons';
+@import './components/links';
+
+// Layout
+@import './layout/header';
+@import './layout/footer';
+
+// Pages
+@import './pages/home';
+
