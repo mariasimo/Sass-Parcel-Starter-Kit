@@ -36,7 +36,7 @@
     font-family: $f_primary;
     font-weight: $bold;
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.4;
 
     @include small() {
@@ -136,7 +136,7 @@
     font-family: $f_secondary;
     font-weight: $regular;
     font-size: 16px;
-    line-height: 1.45;
+    line-height: 1.5;
 }
 
 .body-m {

@@ -1,0 +1,43 @@
+.hyplex-module {
+    width: 100%;
+
+    .inner {
+        padding: $m 0;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+
+        .img-container {
+            align-self: flex-end;
+        }
+        .hyplex-card {
+            max-width: 750px;
+            padding: $l $m;
+            top: 0;
+            transform: translateY(65%);
+            position: absolute;
+            display: flex;
+            align-items: flex-start;
+
+            img {
+                margin-right: $xm;
+            }
+
+            .content-text {
+                width: 560px;
+                
+                .title {
+                    margin-bottom: $xs;
+                }
+                .standfirst {
+                    margin-bottom: $xm;
+                    color: $text-low-emphasis;
+                }
+
+                p {
+                    color: transparentize($color: $text-high-emphasis, $amount: 0.1)
+                }
+            }
+        }
+    }
+}
