@@ -50,8 +50,8 @@
                     cursor: pointer;
                 }
 
-                &.last-item {
-                    border-left: none;
+                &:last-child {
+                    border-right: none;
                 }
             }
         }
