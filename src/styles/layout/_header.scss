@@ -17,9 +17,9 @@ header {
 @media only screen and (max-width: 61.9375rem) {
     header {
         position: fixed;
-        width: 100%;
         top: 0;
         left: 0;
+        right: 0;
         z-index: 1000;
     }
 }
@@ -490,7 +490,7 @@ header .megamenu-mobile.open {
 @media only screen and (max-width: 61.9375rem) {
     header .megamenu-mobile.open .bottom-menu {
         position: fixed;
-        width: 100%;
+        width: -webkit-fill-available;
         top: 0;
         left: 0;
         z-index: 1000;
@@ -505,7 +505,7 @@ header .megamenu-mobile.open .megamenu-mobile__content {
     flex: 1;
 }
 header .megamenu-mobile.open .megamenu-mobile__trigger:after {
-    // background: url(/images/icons/icon-times.svg) no-repeat 0;
+    background: url(/images/icons/icon-times.svg) no-repeat 0;
     background-size: contain;
 }
 header .megamenu-mobile-submenu {
@@ -847,13 +847,7 @@ header .top-menu__links ul li {
         color: $text_header_links;
     }
 }
-header .top-menu__links ul li.text-higlighted-blue {
-    font: 0.75rem Futura-Bold, sans-serif;
-    line-height: 0.9375rem;
-    color: #1173af;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
+
 header .top-menu__links ul li.text-higlighted-blue.collapsible {
     padding: 0.75rem;
     min-width: 11.875rem;
@@ -1140,7 +1134,9 @@ header .search-btn {
     padding: 0;
 }
 
-header .top-menu__links .link {
+
+header .top-menu__links .link,
+a.text-higlighted-blue {
     @include navigation_s_bold();
     color: $basic03;
 
@@ -1161,7 +1157,7 @@ header .info-btn.btn-primary {
 
 
 
-// Responsive tweaks
+// Responsive toggle
 #sticky-header{
     @include desktop {
         display: block;
@@ -1175,4 +1171,13 @@ header .info-btn.btn-primary {
         display: none;
     }   
     display: block;
+}
+
+body.menu-is-open {
+    position: fixed; 
+    height: auto; 
+    width: 100%; 
+    overflow: hidden scroll; 
+    top: 0px; 
+    left: 0px;
 }
