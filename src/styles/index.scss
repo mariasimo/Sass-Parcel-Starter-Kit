@@ -10,11 +10,12 @@
 @import './base/colors';
 @import './base/type';
 @import './base/base';
+@import './base/buttons';
+@import './base/links';
 
 // Components
 @import './components/tabs';
-@import './components/buttons';
-@import './components/links';
+@import './components/hero';
 
 // Layout
 @import './layout/header';
