@@ -51,7 +51,8 @@ button {
 }
 
 ul.dotted-list {
-    margin: $m $s;
+    margin-left: $s;
+     
 
     li {
         list-style-image: url(/images/diamond-bullet-list.svg);
@@ -59,8 +60,11 @@ ul.dotted-list {
         margin-bottom: $xm;
 
         .title {
-            margin-bottom: $s;
+            margin-bottom: $xs * .75;
         }
 
+        &:last-of-type {
+            margin-bottom: 0
+        }
     }
 }

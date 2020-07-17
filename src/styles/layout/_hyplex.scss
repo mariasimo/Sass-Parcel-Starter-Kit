@@ -3,55 +3,74 @@
 
     .inner {
         padding: $m 0;
-        display: flex;
-        position: relative;
-        flex-direction: column;
 
-        .img-container {
-            align-self: flex-end;
-        }
-        .hyplex-card {
-            max-width: 750px;
-            padding: $l $m;
-            top: 0;
-            transform: translateY(60%);
-            position: absolute;
+        .intro {
             display: flex;
-            align-items: flex-start;
+            position: relative;
+            height: 30rem;
 
-            img {
-                margin-right: $xm;
-            }
+            .img-container {
+                margin-left: auto;
 
-            .content-text {
-                width: 560px;
-                
-                .title {
-                    margin-bottom: $s*.75;
-                }
-                .standfirst {
-                    margin-bottom: $xm;
-                    color: transparentize($color: $text-high-emphasis, $amount: 0.2)
-                }
+                .bg-img {
+                    height: 100%;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: top right;
+                    background-image: url(/images/hyplex-girl-student-bg.jpg);
 
-                p {
-                    color: transparentize($color: $text-high-emphasis, $amount: 0.1)
+                    @include desktop {
+                        background-position: center right;
+                        background-size: cover;
+                    }
                 }
             }
 
-
-            &:after {
-                content: '';
-                width: 100%;
-                height: $m;
+            .hyplex-card {
+                max-width: 750px;
+                padding: $l $m;
+                top: 0;
+                transform: translateY(50%);
                 position: absolute;
-                left: 0;
-                right: 0;
-                bottom: -$m * 0.95;
-                background: url('/images/paper-silver.svg');
-                background-repeat: no-repeat;
-                background-size: cover;
+                display: flex;
+                align-items: flex-start;
+                z-index: 99;
+
+                img {
+                    margin-right: $xm;
+                }
+
+                .content-text {
+                    width: 560px;
+                    
+                    .title {
+                        margin-bottom: $s*.75;
+                    }
+                    .standfirst {
+                        margin-bottom: $xm;
+                        color: transparentize($color: $text-high-emphasis, $amount: 0.2)
+                    }
+
+                    p {
+                        color: transparentize($color: $text-high-emphasis, $amount: 0.1)
+                    }
+                }
+
+
+                &:after {
+                    content: '';
+                    width: 100%;
+                    height: $m;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: -$m * 0.95;
+                    background: url('/images/paper-silver.svg');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
             }
         }
+
     }
 }

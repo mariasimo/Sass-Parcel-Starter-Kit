@@ -1,0 +1,31 @@
+.tabs {
+    width: 100%;
+    display: flex;
+
+    .tab-menu,
+    .tab-content {
+        border: 1px solid $ui_line;
+        display: flex;
+        padding-top: $xl04
+    }
+
+    .tab-content {
+        border-left: none;
+        padding: $xl02;
+        padding-top: $xl04;
+
+        .tab-content-item {
+            display: none; 
+
+            &.current {
+                display: block;
+            }
+
+            .standfirst {
+                margin-bottom: $m;
+            }
+        }
+
+        
+    }
+}
