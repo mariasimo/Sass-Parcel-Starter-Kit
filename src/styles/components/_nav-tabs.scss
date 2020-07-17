@@ -1,0 +1,59 @@
+.nav-tabs {
+    width: 100%;
+    border-bottom: 1px solid $ui_line;
+    position: sticky;
+    top: 0;
+
+    .inner {
+        ul {
+            display: flex;
+
+            li {
+                padding: $m;
+                display: flex;
+                align-items: center;
+                border-right: 1px solid $ui_line;
+
+                a {
+                    span {
+                        @include navigation();
+                        display: block;
+                    }
+                    @include navigation_l();
+                }
+                img {
+                    margin-right: $s;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    width: 0;
+                    height: 5px;
+                    background-color: $interactive_main;
+                    transition: opacity .35s;
+                    opacity: 0;
+                }
+
+                &.current:after,
+                &:hover:after {
+                   right: 0;
+                   width: 100%;
+                   opacity: 1;
+                   transition: all 0.5s linear;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                &.last-item {
+                    border-left: none;
+                }
+            }
+        }
+    }
+}
