@@ -14,7 +14,7 @@
             max-width: 750px;
             padding: $l $m;
             top: 0;
-            transform: translateY(65%);
+            transform: translateY(60%);
             position: absolute;
             display: flex;
             align-items: flex-start;
@@ -37,6 +37,20 @@
                 p {
                     color: transparentize($color: $text-high-emphasis, $amount: 0.1)
                 }
+            }
+
+
+            &:after {
+                content: '';
+                width: 100%;
+                height: $m;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -$m * 0.95;
+                background: url('/images/paper-silver.svg');
+                background-repeat: no-repeat;
+                background-size: cover;
             }
         }
     }

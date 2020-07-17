@@ -27,10 +27,10 @@
                 position: absolute;
                 left: 0;
                 right: 0;
-                bottom: -$m;
+                bottom: -$m * 0.95;
                 background: url('/images/paper-red.svg');
                 background-repeat: no-repeat;
-                background-size: contain;
+                background-size: cover;
             }
         }
     }
