@@ -1,7 +1,7 @@
-// Base
-$container: 1200px;
 
 // Font family 
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
+
 $f_primary: 'Futura';
 $f_secondary: 'Muli', sans-serif;
 
@@ -13,6 +13,10 @@ $bold: 600;
 $medium: 500;
 $regular: 400;
 $light: 200;
+
+
+// Base
+$container: 1200px;
 
 
 // Palette

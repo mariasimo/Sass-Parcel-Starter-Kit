@@ -27,11 +27,11 @@
                 width: 560px;
                 
                 .title {
-                    margin-bottom: $xs;
+                    margin-bottom: $s*.75;
                 }
                 .standfirst {
                     margin-bottom: $xm;
-                    color: $text-low-emphasis;
+                    color: transparentize($color: $text-high-emphasis, $amount: 0.2)
                 }
 
                 p {
