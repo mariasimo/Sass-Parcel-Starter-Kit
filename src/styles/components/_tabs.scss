@@ -1,16 +1,10 @@
 .tabs {
     width: 100%;
     display: flex;
-
-    .tab-menu,
+    
     .tab-content {
-        border: 1px solid $ui_line;
         display: flex;
-        padding-top: $xl04
-    }
-
-    .tab-content {
-        border-left: none;
+        border: 1px solid $ui_line;
         padding: $xl02;
         padding-top: $xl04;
 
@@ -25,7 +19,64 @@
                 margin-bottom: $m;
             }
         }
+    }
 
+    .tab-menu {
+        padding: 0;
+        padding-top: $xl01*.75;
         
+        ul {
+            width: 100%;
+            border: 1px solid $ui_line;
+            border-top: 0;
+            border-right: 0;
+
+            .tab-menu-item {
+                width: 100%;
+                position: relative;
+
+                .inner {
+                    padding: $m $xm;
+                    display: flex;
+                    justify-content: space-between;
+                    border-bottom: 1px solid $ui_line;
+
+                    a {
+                        width: 80%;
+                    }
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    width: 0;
+                    height: 0%;
+                    width: 5px;
+                    background-color: $interactive_main;
+                    transition: opacity .35s;
+                    opacity: 0;
+                }
+
+                &.current:before,
+                &:hover:before {
+                   right: 0;
+                   height: 100%;
+                   opacity: 1;
+                   transition: all 0.25s ease-out;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                &:last-child .inner {
+                    border-bottom: none;
+                }
+            }
+        }
     }
 }
