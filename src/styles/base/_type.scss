@@ -199,10 +199,11 @@
 @mixin button_text() {
     font-family: $f_primary;
     font-weight: $bold;
-    font-size: 10px;
+    font-size: 11.5px;
     line-height: 1;
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.025rem;
+    text-align: center;
 }
 
 .button-text {
@@ -212,9 +213,12 @@
 // Navigation
 @mixin navigation() {
     font-family: $f_primary;
-    font-weight: $medium;
-    font-size: 12px;
+    font-weight: $light;
+    font-size: 14.5px;
     line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-box-direction:normal;
 }
 
 .navigation-text {
@@ -225,7 +229,7 @@
 @mixin navigation_l() {
     font-family: $f_primary;
     font-weight: $bold;
-    font-size: 12px;
+    font-size: 14.5px;
     line-height: 1.2;
 }
 
@@ -237,11 +241,21 @@
 @mixin navigation_s() {
     font-family: $f_primary;
     font-weight: $light;
-    font-size: 12px;
+    font-size: 11.5px;
     line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-box-direction:normal;
 }
 
 .navigation-text-small {
     @include navigation_s();
 }
 
+// Navigation S Bold
+@mixin navigation_s_bold() {
+    font-family: $f_primary;
+    font-weight: $bold;
+    font-size: 11.5px;
+    line-height: 1.2;
+}

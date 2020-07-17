@@ -133,8 +133,7 @@ header ul li.search-link {
 header ul li .icon-phone {
     margin-right: 0.625rem;
 }
-.real-madrid header ul li .icon-phone:after,
-header ul li .icon-phone.real-madrid:after {
+.real-madrid header ul li .icon-phone:after {
     background-image: url(/images/icons/icon-phone.svg);
 }
 header .bottom-menu__content {
@@ -812,10 +811,7 @@ header .top-menu ul li.top-menu__highlighted button {
     border-radius: 0;
     width: auto;
 }
-.real-madrid header .top-menu ul li.top-menu__highlighted,
-header .top-menu ul li.top-menu__highlighted.real-madrid {
-    background-color: #0255a5;
-}
+
 header .top-menu__links {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -831,11 +827,13 @@ header .top-menu__links ul {
     justify-content: flex-start;
 }
 header .top-menu__links ul li {
-    font: 0.75rem Futura-Light, sans-serif;
-    line-height: 0.9375rem;
     padding: 0.75rem 1.5625rem;
-    color: #666;
-    border-left: 0.0625rem solid rgba(222, 56, 49, 0.15);
+    border-left: 0.0625rem solid transparentize($color: $basic02, $amount: .85);
+
+    a {
+        @include navigation_s();
+        color: $text_header_links;
+    }
 }
 header .top-menu__links ul li.text-higlighted-blue {
     font: 0.75rem Futura-Bold, sans-serif;
@@ -904,7 +902,8 @@ header .top-menu__links ul.floated-right li.floated-right--lang .two-line-link {
     margin: auto;
 }
 header .top-menu__links ul.floated-right li.floated-right--lang .two-line-link span {
-    font: 0.75rem Futura-Light, sans-serif;
+    @include navigation_s();
+    color: $text_header_links;
     line-height: 0.9375rem;
 }
 header .top-menu__links ul.floated-right li:first-child {
@@ -1020,7 +1019,7 @@ header .top-menu__phone:after {
     transition: 0.2s linear;
 }
 .no-touch-device header .top-menu__phone:hover {
-    border-bottom: none;
+    border-bottom: 1px solid transparent;
 }
 .no-touch-device header .top-menu__phone:hover:after {
     background-color: #1173af;
@@ -1049,12 +1048,12 @@ header .top-menu .c-select select {
 }
 header .two-line-link {
     color: #000;
-    font-size: 0.9375rem;
-    line-height: 1.125rem;
-    font-family: Futura-Bold, sans-serif;
+
+    @include navigation_l();
+
 }
 header .two-line-link span {
-    font-family: Futura-Light, sans-serif;
+    @include navigation();
     display: block;
 }
 
@@ -1109,3 +1108,34 @@ header .two-line-link span {
 .icon.icon-user-blue:after {
     background-image: url(/images/icons/icon-user.svg);
 }
+
+
+// Tweaks
+header .row:first-child .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+header .search-btn {
+    padding: 0;
+}
+
+header .top-menu__links .link {
+    @include navigation_s_bold();
+    color: $basic03;
+
+    -webkit-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+
+    letter-spacing: 0.5px;
+    border-bottom: 0.0625rem solid transparent;
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+}
+
+
+header .info-btn.btn-primary {
+    padding-left: $s;
+    padding-right: $s;
+}
+

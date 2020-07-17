@@ -1,10 +1,14 @@
-const { readFileSync } = require('fs')
+// No touch screen detection
 
-const posthtml = require('posthtml')
-const include = require('include')
 
-const html = readFileSync('src/index.html')
-
-posthtml([ include({ encoding: 'utf8' }) ])
-    .process(html)
-    .then((result) => console.log(result.html))
+window.addEventListener('load', () => {
+    function is_touch_enabled() { 
+        return ( 'ontouchstart' in window ) ||  
+               ( navigator.maxTouchPoints > 0 ) ||  
+               ( navigator.msMaxTouchPoints > 0 ); 
+    } 
+    
+    const bodyTag = document.querySelector('body')
+    bodyTag.classList.add(!is_touch_enabled() && 'no-touch-device')
+    
+})
