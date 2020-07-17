@@ -14,6 +14,22 @@ body {
     margin: 0 auto;
 }
 
+// Breakpoints copied from UE original styles
+@media only screen and (max-width: 78.75rem) {
+    .container-fluid {
+        max-width: calc(100% - 30px);
+    }
+}
+.container-fluid--small {
+    max-width: 800px;
+}
+@media only screen and (max-width: 800px) {
+    .container-fluid--small {
+        max-width: calc(100% - 30px);
+    }
+}
+
+
 // Button reset
 button {
     background: transparent;

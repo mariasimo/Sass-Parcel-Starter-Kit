@@ -1,3 +1,15 @@
+
+// Structure Styles
+.wrapper {
+    width: 100%;
+}
+@media only screen and (max-width: 61.9375rem) {
+    .wrapper {
+        padding-top: 3.875rem;
+    }
+}
+
+//Header Styles
 header {
     width: 100%;
 }
@@ -1115,6 +1127,14 @@ header .row:first-child .container-fluid {
     padding-left: 0;
     padding-right: 0;
 }
+// Breakpoints copied from UE original styles
+@media only screen and (max-width: 78.75rem) {
+    header .row:first-child  .container-fluid {
+        padding-left: $s;
+        padding-right: $s;
+    }
+}
+
 
 header .search-btn {
     padding: 0;
@@ -1139,3 +1159,20 @@ header .info-btn.btn-primary {
     padding-right: $s;
 }
 
+
+
+// Responsive tweaks
+#sticky-header{
+    @include desktop {
+        display: block;
+    }   
+    display: none;
+}
+
+
+.tablet-only {
+    @include desktop {
+        display: none;
+    }   
+    display: block;
+}
