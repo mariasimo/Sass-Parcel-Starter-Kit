@@ -43,7 +43,12 @@
 
                     a {
                         width: 80%;
+                        color: $text-low-emphasis;
                     }
+                }
+
+                &.current .inner a {
+                    color: $text-high-emphasis;
                 }
 
                 &:before {
@@ -56,7 +61,6 @@
                     width: 0;
                     height: 0%;
                     width: 5px;
-                    background-color: $interactive_main;
                     transition: opacity .35s;
                     opacity: 0;
                 }
@@ -67,6 +71,14 @@
                    height: 100%;
                    opacity: 1;
                    transition: all 0.25s ease-out;
+                }
+
+                &.current:before {
+                    background-color: $interactive_main;
+                }
+
+                &:hover:before {
+                    background-color: $interactive_disabled_contrast;
                 }
 
                 &:hover {
