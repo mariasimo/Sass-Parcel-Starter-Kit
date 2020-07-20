@@ -28,12 +28,12 @@
 .text-low-emphasis { color: $text_low_emphasis }
 .text-inverse { color: $text_inverse }
 
-.interactive-main { background-color: $interactive_main }
-.interactive-hover { background-color: $interactive_hover }
-.interactive-link { background-color: $interactive_link }
-.interactive-disabled { background-color: $interactive_disabled }
-.interactive-inverse { background-color: $interactive_inverse }
-.interactive-legacy { background-color: $interactive_legacy }
+.interactive-main { color: $interactive_main }
+.interactive-hover { color: $interactive_hover }
+.interactive-link { color: $interactive_link }
+.interactive-disabled { color: $interactive_disabled }
+.interactive-inverse { color: $interactive_inverse }
+.interactive-legacy { color: $interactive_legacy }
 
 .ui-decoration { background-color: $ui_decoration;}
 .ui-line { background-color: $ui_line;}

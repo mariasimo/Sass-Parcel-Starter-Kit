@@ -12,16 +12,19 @@
 @import './base/base';
 @import './base/buttons';
 @import './base/links';
+@import './base/lists';
 
 // Components
 @import './components/tabs';
 @import './components/nav-tabs';
 @import './components/hero';
+@import './components/banners';
 
 // Layout
 @import './layout/header';
 @import './layout/footer';
 @import './layout/hyplex';
+@import './layout/figures';
 
 // Pages
 @import './pages/home';

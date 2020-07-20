@@ -1,0 +1,30 @@
+.figures-module {
+    .inner {
+        padding: $xl02 0;
+
+        .intro-row {
+            display: flex;
+            margin-bottom: $xl02;
+
+            .title {
+                max-width: 28rem;
+            }
+        }
+
+        .bottom-row {
+            display: flex;
+
+            .figure-item {
+                .number {
+                    margin-bottom: $xs;
+                }
+                .title {
+                    margin-bottom: $s;
+                }
+                .text {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}

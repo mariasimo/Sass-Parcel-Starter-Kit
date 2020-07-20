@@ -263,3 +263,16 @@
 .bold {
     font-weight: $bold;
 }
+
+// Label
+@mixin label() {
+    font-family: $f_primary;
+    font-weight: $bold;
+    font-size: 14px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.label-text {
+    @include label();
+}
