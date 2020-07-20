@@ -1,0 +1,43 @@
+.covid-measures-module {
+    .inner {
+        padding: $xl02 0;
+
+        .header-item {
+            
+            .title-row {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: $s;
+
+                .title {
+                    max-width: 18rem;
+                }
+                img {
+                    margin-right: $xm;
+                }
+            }
+
+            p {
+                width: 85%;
+            }
+        }
+
+        .covid-measure-item {
+            margin: 0 auto;
+            margin-bottom: $xl02;
+            text-align: center;
+
+            img {
+                margin-bottom: $xm;
+            }
+            .title {
+                margin-bottom: $s;
+            }
+            .text{
+                width: 85%;
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+    }
+}
