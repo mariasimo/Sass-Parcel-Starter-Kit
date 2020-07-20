@@ -72,6 +72,10 @@
                     }
                 }
 
+                &.current .inner a {
+                    color: $text-high-emphasis;
+                }
+
                 &:before {
                     content: '';
                     position: absolute;
