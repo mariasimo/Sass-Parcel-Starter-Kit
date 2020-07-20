@@ -276,3 +276,16 @@
 .label-text {
     @include label();
 }
+
+// Footer title
+@mixin footer_title() {
+    font-family: $f_primary;
+    font-weight: $bold;
+    font-size: 13.5px;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.footer-title {
+    @include footer_title();
+}

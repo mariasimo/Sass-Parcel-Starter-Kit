@@ -1,0 +1,58 @@
+.disclaimer-banner {
+    > .inner {
+        padding: $xl02 0;
+
+        .row {
+            justify-content: space-between;
+            
+
+            .col-left {
+                display: flex;
+                justify-items: center;
+                flex-direction: column;
+
+                .large-text {
+                    margin-bottom: $s;
+                    width: 80%;
+                    color: transparentize($color: $text-high-emphasis, $amount: 0.2)
+                }
+            }
+
+            .col-right {
+                display: flex;
+                justify-items: center;
+               
+                &:before {
+                    content: "";
+                    display: flex;
+                    border-left: 1px solid $ui-line;
+                    height: 100%;
+                }
+
+                .inner {
+                    display: flex;
+                    flex-direction: column;
+                    padding: $s;
+                    padding-left: $xl01;
+
+                    .disclaimer-header {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: $s;
+
+                        h5 {
+                            margin: 0;
+                            color: $text-high-emphasis;
+                        }
+
+                        img {
+                            margin-right: $xs;
+                        }
+                    }
+                    
+                }
+
+            }
+        }
+    }
+}

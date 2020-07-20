@@ -1,5 +1,12 @@
-a[href]:not(.btn) {
+a[href]:not(.btn),
+main a[href]:not(.btn) {
     text-decoration: none;
     color: $text_high_emphasis;
+    cursor: pointer;
+}
+
+footer a[href]:not(.btn) {
+    text-decoration: none;
+    color: $text_inverse;
     cursor: pointer;
 }
