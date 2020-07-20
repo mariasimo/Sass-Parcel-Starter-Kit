@@ -1,0 +1,38 @@
+.ue-experience-module {
+    .inner {
+        padding: $xl02 0;
+
+        .header-item {
+            margin-bottom: $l;
+
+            .title-row {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: $s;
+
+                .title {
+                    max-width: 18rem;
+                }
+                .standfirst {
+                    margin-bottom: $xm;
+                    color: transparentize($color: $text-high-emphasis, $amount: 0.2)
+                }
+                img {
+                    margin-right: $xm;
+                }
+            }
+
+            p { width: 85%; }
+        }
+
+        .content.cards {
+            display: flex;
+            justify-content: flex-end;
+
+            .text {
+                margin-bottom: $s;
+            }
+        }
+
+    }
+}
