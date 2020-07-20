@@ -28,7 +28,8 @@ footer .bottom-section__links {
     padding: 1.875rem 0;
 }
 footer .bottom-section__links a {
-    font: 0.75rem Muli-Regular, sans-serif;
+    font: 0.75rem 'Muli', sans-serif;
+    font-weight: $light;
     line-height: 1.5rem;
     padding: 0 2.125rem;
     position: relative;
