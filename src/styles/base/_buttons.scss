@@ -10,12 +10,13 @@ button {
 @mixin primary_btn() {
     background-color: $basic03;
     color: $text_inverse;
+    width: fit-content;
     border: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     height: $l;
-    padding: $xm;
+    padding: $xm $m;
     border-radius: $m;
     text-decoration: none;
     @include button_text;
