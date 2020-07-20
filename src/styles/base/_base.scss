@@ -6,6 +6,8 @@ body {
     background-color: white;
     min-height: 100%;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 .container-fluid {
@@ -30,14 +32,6 @@ body {
 }
 
 
-// Button reset
-button {
-    background: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
 .img-container {
     width: 100%;
 
@@ -46,25 +40,16 @@ button {
     }
 }
 
-.bold {
-    font-weight: $bold;
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
 }
 
-ul.dotted-list {
-    margin-left: $s;
-     
 
-    li {
-        list-style-image: url(/images/diamond-bullet-list.svg);
-        padding-left: $xs;
-        margin-bottom: $xm;
-
-        .title {
-            margin-bottom: $xs * .75;
-        }
-
-        &:last-of-type {
-            margin-bottom: 0
-        }
-    }
-}
+@import './lists';
+@import './banners';
