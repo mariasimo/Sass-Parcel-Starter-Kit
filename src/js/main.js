@@ -24,24 +24,24 @@ function tabsHandler() {
     const tabContents = document.querySelectorAll('.tab-content-item')
 
     tabItems.forEach(tabItem => {
-        tabItem.addEventListener('click', (e) => _switchTabs(e, tabItems, tabContents))
+        tabItem.addEventListener('click', (e) => _switchContents(e, tabItems, tabContents, 'current', 'data-tabitem'))
     })
 }
 
-function _switchTabs(e, tabItems, tabContents) {
-    // Change tab style
-    const activeTab = e.currentTarget
-    tabItems.forEach(tabItem => {
-        tabItem.classList.remove('current')
+function _switchContents(e, items, contents, cssClass, attrName) {
+    // Change items style
+    const activeItem = e.currentTarget
+    items.forEach(item => {
+        item.classList.remove(cssClass)
     })
-    activeTab.classList.add('current')
+    activeItem.classList.add(cssClass)
 
-    // Show active tab content
-    const activeTabContent = document.getElementById(activeTab.getAttribute('data-tabitem'))
-    tabContents.forEach(tabContent => {
-        tabContent.classList.remove('current')
+    // Show active content
+    const activeContent = document.getElementById(activeItem.getAttribute(attrName))
+    contents.forEach(content => {
+        content.classList.remove(cssClass)
     })
-    activeTabContent.classList.add('current')
+    activeContent.classList.add(cssClass)
 }
 
 // Add class to open modal
@@ -86,6 +86,19 @@ function searchHandler() {
     })
 }
 
+
+// Add megamenu functionality
+function megamenuHandler() {
+    const megamenuItems = document.querySelectorAll('.megamenu-trigger')
+    const megamenuContents = document.querySelectorAll('.megamenu-content')
+
+    megamenuItems.forEach(tabItem => {
+        tabItem.addEventListener('mouseover', (e) => _switchContents(e, megamenuItems, megamenuContents, 'open', 'data-menuid'))
+    })
+}
+
+
+
 window.addEventListener('load', () => {
 
     // Add class to body on no-touch-devices
@@ -103,6 +116,9 @@ window.addEventListener('load', () => {
 
     // Add search fn
     searchHandler()
+
+    // Add megamenu fn
+    megamenuHandler()
 
 })
 
