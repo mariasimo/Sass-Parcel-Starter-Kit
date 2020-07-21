@@ -1,4 +1,5 @@
 import smoothscroll from 'smoothscroll-polyfill';
+// import { animateValue } from './animateValues'
 
 // kick off the polyfill!
 smoothscroll.polyfill();
@@ -69,7 +70,7 @@ function _toggleModal(e, modal, bodyTag) {
 }
 
 // Search engine mockup fn
-function searchHandler() {
+function searchFormHandler() {
     const inputSearch = document.getElementById('query')
     const inputSubmit = document.getElementById('query-submit')
     const searchForm = document.getElementById('search-form')
@@ -235,6 +236,28 @@ function searchHandler() {
 }
 
 
+function animateFiguresHandler () {
+
+    const figuresSection = document.querySelector('.figures-module')
+    const figures = document.querySelectorAll('.figure-item .number')
+
+    let observer = new IntersectionObserver(([entry]) => {
+        if(entry.isIntersecting) {
+            _animateAllFigures(figures);
+            observer.unobserve(figuresSection);
+        }
+    }, {threshold: 1});
+
+    observer.observe(figuresSection);
+}
+
+function _animateAllFigures (figures) {
+    figures.forEach(figure => {
+        animateValue(figure)
+    })
+}
+
+
 
 window.addEventListener('load', () => {
 
@@ -252,7 +275,7 @@ window.addEventListener('load', () => {
     modalSearchHandler(bodyTag)
 
     // Add search fn
-    searchHandler()
+    searchFormHandler()
 
     // Add megamenu fn
     megamenuHandler()
@@ -266,5 +289,54 @@ window.addEventListener('load', () => {
     // Add class to open modal video
     modalVideoHandler(bodyTag)
 
+    // Animate figures
+    animateFiguresHandler()
 })
+
+
+
+export function animateValue(obj, start = 0, end = null, duration = 3000) {
+    if (obj) {
+
+        // save starting text for later (and as a fallback text if JS not running and/or google)
+        var textStarting = obj.innerHTML;
+
+
+        // remove non-numeric from starting text if not specified
+        end = end || parseInt(textStarting.replace(/\D/g, ""));
+
+        var range = end - start;
+
+        // no timer shorter than 50ms (not really visible any way)
+        var minTimer = 50;
+
+        // calc step time to show all interediate values
+        var stepTime = Math.abs(Math.floor(duration / range));
+
+        // never go below minTimer
+        stepTime = Math.max(stepTime, minTimer);
+
+        // get current time and calculate desired end time
+        var startTime = new Date().getTime();
+        var endTime = startTime + duration;
+        var timer;
+
+        function run() {
+            var now = new Date().getTime();
+            var remaining = Math.max((endTime - now) / duration, 0);
+            var value = Math.round(end - (remaining * range));
+
+            const valueWithSeparator = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+            obj.innerHTML = valueWithSeparator;
+            ;
+            if (value == end) {
+                clearInterval(timer);
+            }
+        }
+
+        timer = setInterval(run, stepTime);
+        run();
+
+    }
+}
 
