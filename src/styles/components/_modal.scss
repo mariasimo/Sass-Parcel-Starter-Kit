@@ -10,7 +10,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 10000;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -281,4 +281,91 @@
     width: 100%;
     height: 100%;
     outline: none;
+}
+
+
+// Modal video
+
+#modal-video .js-modal-close {
+    display: none;
+}
+#modal-video .modal__wrapper {
+    padding: 0;
+    background: none;
+    height: auto;
+    overflow: visible;
+    margin: 0 auto;
+    max-width: calc(100% - 1.875rem);
+}
+@media (min-aspect-ratio: 16/9) {
+    #modal-video .modal__wrapper {
+        height: 100%;
+    }
+}
+@media screen and (max-height: 400px) {
+    #modal-video .modal__wrapper {
+        height: 100%;
+    }
+}
+@media (orientation: landscape) {
+    #modal-video .modal__wrapper {
+        max-height: 85%;
+    }
+}
+#modal-video .modal__wrapper .modal__box {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    max-height: 100%;
+}
+@media (min-aspect-ratio: 16/9) and (max-height: 650px) {
+    #modal-video .modal__wrapper .modal__box {
+        height: calc(100% - 5rem);
+        margin: 2.5rem auto;
+    }
+}
+@media screen and (max-height: 400px) {
+    #modal-video .modal__wrapper .modal__box {
+        height: calc(100% - 5rem);
+        margin: 2.5rem auto;
+    }
+}
+@media (max-width: 992px) and (orientation: landscape) {
+    #modal-video .modal__wrapper .modal__box {
+        height: 100%;
+    }
+}
+#modal-video .modal__wrapper .modal__box:before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+}
+#modal-video .modal__wrapper .modal__box iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+#modal-video .modal__parent {
+    margin: 1.875rem auto;
+}
+@media screen and (max-height: 650px) {
+    #modal-video .modal__parent {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+}
+#modal-video .modal__close {
+    position: absolute;
+    top: -1.875rem;
+    z-index: 1;
+    right: 0;
+}
+#modal-video .modal__close:after {
+    background: url(/images/icons/icon-times-white.svg) 50% no-repeat;
 }

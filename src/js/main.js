@@ -16,7 +16,7 @@ function headerMenuToggle(bodyTag) {
     const mobileHeader = document.querySelector('header .tablet-only')
     const openMenuBtn = mobileHeader.querySelector('.megamenu-mobile__trigger.header-btn')
     const navTabs = document.querySelector('.nav-tabs ')
-    
+
     const toggleMenu = (menu) => {
         menu.classList.toggle('open');
         bodyTag.classList.toggle('menu-is-open');
@@ -33,7 +33,7 @@ function tabsHandler() {
     const tabContents = document.querySelectorAll('.tab-content-item')
 
     tabItems.forEach(tabItem => {
-        tabItem.addEventListener('click', (e) => _switchContents(e, tabItems, tabContents, 'current', 'current','data-tabitem'))
+        tabItem.addEventListener('click', (e) => _switchContents(e, tabItems, tabContents, 'current', 'current', 'data-tabitem'))
     })
 }
 
@@ -53,8 +53,8 @@ function _switchContents(e, items, contents, cssClassContent, cssClassItem, attr
     activeContent.classList.add(cssClassContent)
 }
 
-// Add class to open modal
-function modalHandler(bodyTag) {
+// Add class to open modal search
+function modalSearchHandler(bodyTag) {
     const searchBtn = document.getElementById('search-btn')
     const searchModal = document.getElementById('search-engine-modal-form')
     const modalCloseBtn = document.getElementById('modal-close-btn')
@@ -63,8 +63,8 @@ function modalHandler(bodyTag) {
     modalCloseBtn.addEventListener('click', (e) => _toggleModal(e, searchModal, bodyTag))
 }
 
-function _toggleModal(e, searchModal, bodyTag) {
-    searchModal.classList.toggle('modal-visible');
+function _toggleModal(e, modal, bodyTag) {
+    modal.classList.toggle('modal-visible');
     bodyTag.classList.toggle('modal-is-open');
 }
 
@@ -89,7 +89,7 @@ function searchHandler() {
     searchForm.addEventListener('submit', (e) => {
         e.preventDefault()
         const q = inputSearch.value
-        if(q) {
+        if (q) {
             window.location.href = `https://universidadeuropea.es/search?q=${q}`
         }
     })
@@ -113,11 +113,11 @@ function _closeMegaMenu(e, megamenuItems, megamenuContents) {
         megamenuItems.forEach(item => {
             item.classList.remove('active')
         })
-    
+
         megamenuContents.forEach(content => {
             content.classList.remove('open')
         })
-    },500, e)
+    }, 500, e)
 }
 
 // Toggle lang selector
@@ -126,7 +126,7 @@ function langSwitcherHandler() {
 
     langSelectorBtn.addEventListener('click', (e) => {
         langSelectorBtn.classList.toggle('open')
-    })   
+    })
 }
 
 
@@ -140,7 +140,7 @@ function navTabsHandler() {
     const ueExperienceSection = document.getElementById('experiencia-ue')
 
     const sections = [hyplexLearningSection, covidMeasuresSection, ueExperienceSection]
-    
+
     // Change current class and add sticky styles
     window.addEventListener('scroll', (e) => {
         _changeCurrentTab(e, navTabs.offsetHeight, sections)
@@ -148,7 +148,7 @@ function navTabsHandler() {
     })
 
     // Smooth scroll behaviour
-   _scrollToSections(navTabs.offsetHeight)
+    _scrollToSections(navTabs.offsetHeight)
 
 }
 
@@ -159,9 +159,9 @@ function _changeCurrentTab(e, navTabsHeight, sections) {
 
     sections.forEach(section => {
         const sectionIsInViewport = navTabsHeight > section.getBoundingClientRect().top && section.getBoundingClientRect().top + section.getBoundingClientRect().height > 0
-        if( sectionIsInViewport ) {
+        if (sectionIsInViewport) {
             navbarItem = document.getElementById(section.getAttribute('data-tab'))
-        } 
+        }
     })
 
     navbarAllItems.forEach(item => {
@@ -172,7 +172,7 @@ function _changeCurrentTab(e, navTabsHeight, sections) {
 function _getStickyTab(e, navTabs) {
     const navTabsTop = navTabs.getBoundingClientRect().top
 
-    if(navTabsTop <= 0) {
+    if (navTabsTop <= 0) {
         setTimeout(() => navTabs.classList.add('sticky-tabs'), 150)
     } else {
         setTimeout(() => navTabs.classList.remove('sticky-tabs'), 150)
@@ -187,13 +187,54 @@ function _scrollToSections(navTabsHeight) {
         item.addEventListener('click', () => {
             const tabContent = document.getElementById(item.getAttribute('data-content'))
             window.scrollBy({
-                top: tabContent.getBoundingClientRect().top - navTabsHeight/2,
+                top: tabContent.getBoundingClientRect().top - navTabsHeight / 2,
                 left: 0,
                 behavior: 'smooth'
             })
         })
     })
 }
+
+// Add class to open modal search
+function modalVideoHandler(bodyTag) {
+    const playBtn = document.getElementById('play-button')
+    const videoModal = document.getElementById('modal-video')
+    const modalCloseBtn = videoModal.querySelector('.modal__close')
+
+    playBtn.addEventListener('click', (e) => _toggleModal(e, videoModal, bodyTag))
+    modalCloseBtn.addEventListener('click', (e) => _toggleModal(e, videoModal, bodyTag))
+}
+
+
+
+// Search engine mockup fn
+function searchHandler() {
+    const inputSearch = document.getElementById('query')
+    const inputSubmit = document.getElementById('query-submit')
+    const searchForm = document.getElementById('search-form')
+    const fakePlaceholder = document.querySelector('.fake-placeholder')
+
+    inputSearch.oninput = (e) => {
+        const q = e.target.value
+        if (q.length) {
+            fakePlaceholder.classList.add('hidden');
+            inputSubmit.removeAttribute('disabled')
+        } else {
+            fakePlaceholder.classList.remove('hidden')
+            inputSubmit.setAttribute('disabled', '')
+        }
+    }
+
+    searchForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        const q = inputSearch.value
+        if (q) {
+            window.location.href = `https://universidadeuropea.es/search?q=${q}`
+        }
+    })
+}
+
+
 
 window.addEventListener('load', () => {
 
@@ -207,8 +248,8 @@ window.addEventListener('load', () => {
     // Add tabs functionality
     tabsHandler()
 
-    // Add class to open modal
-    modalHandler(bodyTag)
+    // Add class to open modal search
+    modalSearchHandler(bodyTag)
 
     // Add search fn
     searchHandler()
@@ -221,6 +262,9 @@ window.addEventListener('load', () => {
 
     //Add nav tabs fn
     navTabsHandler()
+
+    // Add class to open modal video
+    modalVideoHandler(bodyTag)
 
 })
 

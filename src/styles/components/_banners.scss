@@ -42,10 +42,17 @@
         height: 10rem;
         width: 10rem;
         margin-top: -4rem;
+        opacity: .9;
+        transition: opacity .25s ease-in, transform .25s ease-in;
 
         img {
             height: 100%;
             width: 100%;
+        }
+
+        &:hover {
+            transform: translate(-50%) scale(1.1);
+            opacity: 1
         }
     }
 }
