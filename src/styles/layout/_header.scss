@@ -285,6 +285,7 @@ header .megamenu-content.open {
 }
 header .megamenu-trigger {
     position: relative;
+    cursor: pointer;
 }
 header .megamenu-trigger:after {
     content: "";

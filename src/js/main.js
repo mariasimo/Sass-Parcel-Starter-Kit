@@ -24,24 +24,24 @@ function tabsHandler() {
     const tabContents = document.querySelectorAll('.tab-content-item')
 
     tabItems.forEach(tabItem => {
-        tabItem.addEventListener('click', (e) => _switchContents(e, tabItems, tabContents, 'current', 'data-tabitem'))
+        tabItem.addEventListener('click', (e) => _switchContents(e, tabItems, tabContents, 'current', 'current','data-tabitem'))
     })
 }
 
-function _switchContents(e, items, contents, cssClass, attrName) {
+function _switchContents(e, items, contents, cssClassContent, cssClassItem, attrName) {
     // Change items style
     const activeItem = e.currentTarget
     items.forEach(item => {
-        item.classList.remove(cssClass)
+        item.classList.remove(cssClassItem)
     })
-    activeItem.classList.add(cssClass)
+    activeItem.classList.add(cssClassItem)
 
     // Show active content
     const activeContent = document.getElementById(activeItem.getAttribute(attrName))
     contents.forEach(content => {
-        content.classList.remove(cssClass)
+        content.classList.remove(cssClassContent)
     })
-    activeContent.classList.add(cssClass)
+    activeContent.classList.add(cssClassContent)
 }
 
 // Add class to open modal
@@ -91,12 +91,25 @@ function searchHandler() {
 function megamenuHandler() {
     const megamenuItems = document.querySelectorAll('.megamenu-trigger')
     const megamenuContents = document.querySelectorAll('.megamenu-content')
+    const megamenuWrapper = document.querySelector('.megamenu-parent')
 
-    megamenuItems.forEach(tabItem => {
-        tabItem.addEventListener('mouseover', (e) => _switchContents(e, megamenuItems, megamenuContents, 'open', 'data-menuid'))
+    megamenuItems.forEach(item => {
+        item.addEventListener('mouseenter', (e) => _switchContents(e, megamenuItems, megamenuContents, 'open', 'active', 'data-menuid'))
     })
+    megamenuWrapper.addEventListener('mouseleave', (e) => _closeMegaMenu(e, megamenuItems, megamenuContents))
 }
 
+function _closeMegaMenu(e, megamenuItems, megamenuContents) {
+    setTimeout((e) => {
+        megamenuItems.forEach(item => {
+            item.classList.remove('active')
+        })
+    
+        megamenuContents.forEach(content => {
+            content.classList.remove('open')
+        })
+    },500, e)
+}
 
 
 window.addEventListener('load', () => {
