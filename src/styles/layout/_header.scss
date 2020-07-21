@@ -1189,3 +1189,12 @@ body.menu-is-open {
     top: 0px; 
     left: 0px;
 }
+
+body.modal-is-open {
+    position: fixed; 
+    height: auto; 
+    width: 100%; 
+    overflow: hidden; 
+    top: 0px; 
+    left: 0px;
+}

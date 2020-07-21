@@ -45,18 +45,18 @@ function _switchContents(e, items, contents, cssClassContent, cssClassItem, attr
 }
 
 // Add class to open modal
-function modalHandler() {
+function modalHandler(bodyTag) {
     const searchBtn = document.getElementById('search-btn')
     const searchModal = document.getElementById('search-engine-modal-form')
     const modalCloseBtn = document.getElementById('modal-close-btn')
 
-    searchBtn.addEventListener('click', (e) => _toggleModal(e, searchModal))
-    modalCloseBtn.addEventListener('click', (e) => _toggleModal(e, searchModal))
+    searchBtn.addEventListener('click', (e) => _toggleModal(e, searchModal, bodyTag))
+    modalCloseBtn.addEventListener('click', (e) => _toggleModal(e, searchModal, bodyTag))
 }
 
-function _toggleModal(e, searchModal) {
-    console.log(searchModal)
+function _toggleModal(e, searchModal, bodyTag) {
     searchModal.classList.toggle('modal-visible');
+    bodyTag.classList.toggle('modal-is-open');
 }
 
 // Search engine mockup fn
@@ -111,6 +111,15 @@ function _closeMegaMenu(e, megamenuItems, megamenuContents) {
     },500, e)
 }
 
+// Toggle lang selector
+function langSwitcherHandler() {
+    const langSelectorBtn = document.querySelector('.megamenu-mobile-submenu')
+    
+    langSelectorBtn.addEventListener('click', () => {
+        this.classList.toggle('open')
+    })   
+}
+
 
 window.addEventListener('load', () => {
 
@@ -125,13 +134,15 @@ window.addEventListener('load', () => {
     tabsHandler()
 
     // Add class to open modal
-    modalHandler()
+    modalHandler(bodyTag)
 
     // Add search fn
     searchHandler()
 
     // Add megamenu fn
     megamenuHandler()
+
+    //Add 
 
 })
 
