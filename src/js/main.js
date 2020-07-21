@@ -124,6 +124,41 @@ function langSwitcherHandler() {
 }
 
 
+// Change nav-tabs current class on scroll
+function navTabsHandler() {
+    const navTabs = document.querySelector('.nav-tabs')
+
+        // Three main sections
+        const hyplexLearningSection = document.getElementById('aprendizaje-hyplex')
+        const covidMeasuresSection = document.getElementById('medidas-sanitarias')
+        const ueExperienceSection = document.getElementById('experiencia-ue')
+    
+        const sections = [hyplexLearningSection, covidMeasuresSection, ueExperienceSection]
+
+    window.addEventListener('scroll', (e) => {
+        _changeCurrentTab(e, navTabs.offsetHeight, sections)
+        _getStickyTab(e, navTabs)
+    })
+}
+
+function _changeCurrentTab(e, navTabsHeight, sections) {
+
+    let navbarItem = document.querySelector('.nav-tabs li')
+    const navbarAllItems = document.querySelectorAll('.nav-tabs li')
+
+    sections.forEach(section => {
+        const sectionIsInViewport = navTabsHeight > section.getBoundingClientRect().top && section.getBoundingClientRect().top + section.getBoundingClientRect().height > 0
+        if( sectionIsInViewport ) {
+            navbarItem = document.getElementById(section.getAttribute('data-tab'))
+        } 
+    })
+
+    navbarAllItems.forEach(item => {
+        (item !== navbarItem) ? item.classList.remove('current') : item.classList.add('current')
+    })
+}
+
+
 window.addEventListener('load', () => {
 
     // Add class to body on no-touch-devices
@@ -147,6 +182,9 @@ window.addEventListener('load', () => {
 
     //Add lang switcher fn
     langSwitcherHandler()
+
+    //Add nav tabs fn
+    navTabsHandler()
 
 })
 
