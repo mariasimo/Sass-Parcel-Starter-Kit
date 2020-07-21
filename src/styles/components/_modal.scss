@@ -1,0 +1,274 @@
+.modal {
+    display: none;
+}
+.modal.modal-visible {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal__close {
+    min-width: 0;
+    right: 1.875rem;
+    top: 1.875rem;
+    z-index: 10;
+}
+.modal__close,
+.modal__close:after {
+    height: 1.25rem;
+    position: absolute;
+    width: 1.25rem;
+}
+.modal__close:after {
+    content: "";
+    cursor: pointer;
+    background-size: contain;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    background: url(/images/icons/icon-times-grey.svg) 50% no-repeat;
+}
+
+@media only screen and (max-width: 992px) {
+    .modal__close {
+        top: 1.25rem;
+        right: 0.9375rem;
+    }
+}
+
+.modal__parent {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+@media screen and (max-height: 600px) {
+    .modal__parent {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+}
+.modal__wrapper {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 78.75rem;
+    flex-basis: 78.75rem;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 2.5rem auto;
+    padding: 7.4375rem 0;
+    position: relative;
+    overflow: visible;
+    width: 1200px;
+}
+@media only screen and (max-width: 78.75rem) {
+    .modal__wrapper {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        width: calc(100% - 1.875rem);
+    }
+}
+@media only screen and (max-width: 61.9375rem) {
+    .modal__wrapper {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .modal__wrapper {
+        display: block;
+        height: 100%;
+        margin: 0 auto;
+        overflow: auto;
+        padding: 8.6875rem 0.9375rem;
+    }
+}
+.modal__box {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.modal__box .form-title,
+.modal__box .h3 {
+    margin-bottom: 0.625rem;
+}
+#search-engine-modal-form.modal.modal-visible {
+    top: 0;
+}
+@media only screen and (max-width: 62rem) {
+    #search-engine-modal-form.modal.modal-visible {
+        top: 3.875rem;
+    }
+}
+
+#search-engine-modal-form.modal .modal__box {
+    width: 100%;
+}
+#search-engine-modal-form.modal .modal__close {
+    height: 3rem;
+    right: 0;
+    top: 5rem;
+    width: 3rem;
+}
+#search-engine-modal-form.modal .modal__close:after {
+    height: 3rem;
+    background: url(/images/icons/icon-times-big.svg);
+    width: 3rem;
+}
+@media only screen and (max-width: 85rem) {
+    #search-engine-modal-form.modal .modal__close {
+        right: 5rem;
+    }
+}
+@media only screen and (max-width: 62rem) {
+    #search-engine-modal-form.modal .modal__close {
+        height: 1rem;
+        right: 0.9375rem;
+        top: 1.25rem;
+        width: 1rem;
+    }
+    #search-engine-modal-form.modal .modal__close:after {
+        height: 1rem;
+        background: url(/images/icons/icon-times-grey.svg);
+        background-size: contain;
+        width: 1rem;
+    }
+}
+#search-engine-modal-form.modal .modal__parent {
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+#search-engine-modal-form.modal .modal__wrapper {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    height: calc(100% - 3.125rem);
+    margin-top: 0;
+    padding: 11.5rem 0;
+    width: 1200px;
+}
+@media only screen and (max-width: 62rem) {
+    #search-engine-modal-form.modal .modal__wrapper {
+        padding: 3.625rem 0.9375rem;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 62rem) {
+    #search-engine-modal-form.modal .search-engine .btn-small {
+        width: 100%;
+    }
+}
+#search-engine-modal-form.long {
+    z-index: 10;
+}
+#search-engine-modal-form.long.modal.modal-visible {
+    top: 4.25rem;
+}
+#search-engine-modal-form form {
+    border-bottom: 1px solid #cfcfcf;
+    padding-bottom: 0.625rem;
+    position: relative;
+}
+#search-engine-modal-form form input {
+    border: none;
+    display: inline-block;
+    padding-left: 0;
+}
+@media only screen and (max-width: 62rem) {
+    #search-engine-modal-form form input#query {
+        border-bottom: 1px solid #cfcfcf;
+        margin-bottom: 0.625rem;
+        padding-left: 0.5rem;
+    }
+}
+#search-engine-modal-form form input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #fff inset;
+    box-shadow: inset 0 0 0 1000px #fff;
+}
+#search-engine-modal-form form input:-webkit-autofill:focus,
+#search-engine-modal-form form input:-webkit-autofill:hover {
+    -webkit-box-shadow: 0 0 0 1000px #fff inset;
+    box-shadow: inset 0 0 0 1000px #fff;
+}
+#search-engine-modal-form form input::-ms-clear {
+    display: none;
+}
+#search-engine-modal-form form span.fake-placeholder {
+    color: #9b9b9b;
+    display: inline-block;
+    font: 3.5rem Futura-Bold, sans-serif;
+    left: 0.9375rem;
+    line-height: 3.5rem;
+    margin-left: 0.3125rem;
+    position: absolute;
+    text-transform: uppercase;
+    bottom: 0.625rem;
+}
+#search-engine-modal-form form span.fake-placeholder.hidden {
+    display: none;
+}
+@media only screen and (max-width: 62rem) {
+    #search-engine-modal-form form span.fake-placeholder {
+        font-size: 1.875rem;
+        line-height: 2.5rem;
+        top: 0;
+    }
+}
+@media only screen and (max-width: 62rem) {
+    #search-engine-modal-form form {
+        border: none;
+        margin: 0;
+    }
+}
+
+#loading-screen .modal__box p {
+    color: #fff;
+    text-align: center;
+}
+@media only screen and (max-width: 62rem) {
+    #loading-screen .modal__box p {
+        text-align: center;
+    }
+}
+
+
+
+// Tweaks
+.modal .row {
+    justify-content: center;
+}
+
+.modal .search-btn {
+    padding: 0;
+    width: 178px;
+    float: right
+}
+
+.modal .search-btn[disabled] {
+    cursor: default!important;
+    pointer-events: none;
+    color: #789;
+    background-color: #cad6df!important;
+}

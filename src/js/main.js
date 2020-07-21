@@ -44,6 +44,21 @@ function _switchTabs(e, tabItems, tabContents) {
     activeTabContent.classList.add('current')
 }
 
+// Add class to open modal
+function modalHandler() {
+    const searchBtn = document.getElementById('search-btn')
+    const searchModal = document.getElementById('search-engine-modal-form')
+    const modalCloseBtn = document.getElementById('modal-close-btn')
+
+    searchBtn.addEventListener('click', (e) => _toggleModal(e, searchModal))
+    modalCloseBtn.addEventListener('click', (e) => _toggleModal(e, searchModal))
+}
+
+function _toggleModal(e, searchModal) {
+    console.log(searchModal)
+    searchModal.classList.toggle('modal-visible');
+}
+
 
 window.addEventListener('load', () => {
 
@@ -56,6 +71,9 @@ window.addEventListener('load', () => {
 
     // Add tabs functionality
     tabsHandler()
+
+    // Add class to open modal
+    modalHandler()
     
 })
 
