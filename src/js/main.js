@@ -1,3 +1,9 @@
+import smoothscroll from 'smoothscroll-polyfill';
+
+// kick off the polyfill!
+smoothscroll.polyfill();
+
+
 // No touch screen detection
 function isTouchEnabled() {
     return ('ontouchstart' in window) ||
@@ -134,12 +140,16 @@ function navTabsHandler() {
     const ueExperienceSection = document.getElementById('experiencia-ue')
 
     const sections = [hyplexLearningSection, covidMeasuresSection, ueExperienceSection]
-
-
+    
+    // Change current class and add sticky styles
     window.addEventListener('scroll', (e) => {
         _changeCurrentTab(e, navTabs.offsetHeight, sections)
         _getStickyTab(e, navTabs)
     })
+
+    // Smooth scroll behaviour
+   _scrollToSections(navTabs.offsetHeight)
+
 }
 
 function _changeCurrentTab(e, navTabsHeight, sections) {
@@ -169,6 +179,21 @@ function _getStickyTab(e, navTabs) {
     }
 }
 
+
+function _scrollToSections(navTabsHeight) {
+    const navbarAllItems = document.querySelectorAll('.nav-tabs li')
+
+    navbarAllItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const tabContent = document.getElementById(item.getAttribute('data-content'))
+            window.scrollBy({
+                top: tabContent.getBoundingClientRect().top - navTabsHeight/2,
+                left: 0,
+                behavior: 'smooth'
+            })
+        })
+    })
+}
 
 window.addEventListener('load', () => {
 

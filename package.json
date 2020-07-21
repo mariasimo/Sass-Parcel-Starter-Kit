@@ -15,5 +15,7 @@
     "posthtml-include": "^1.4.3",
     "sass": "^1.26.10"
   },
-  "dependencies": {}
+  "dependencies": {
+    "smoothscroll-polyfill": "^0.4.4"
+  }
 }

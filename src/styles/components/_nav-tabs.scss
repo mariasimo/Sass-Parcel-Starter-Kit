@@ -6,11 +6,12 @@
     bottom: 0;
     background-color: $ui-bg-01;
     z-index: 9999;
+    box-shadow: 0 0 12px rgba(0,0,0, .075);
     
     &.sticky-tabs .inner {
         ul li {
             a {
-                margin-bottom: $s;
+                margin-bottom: $xm*0.75;
                 span {
                 opacity: 0;
                 }
