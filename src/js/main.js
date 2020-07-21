@@ -114,9 +114,9 @@ function _closeMegaMenu(e, megamenuItems, megamenuContents) {
 // Toggle lang selector
 function langSwitcherHandler() {
     const langSelectorBtn = document.querySelector('.megamenu-mobile-submenu')
-    
-    langSelectorBtn.addEventListener('click', () => {
-        this.classList.toggle('open')
+
+    langSelectorBtn.addEventListener('click', (e) => {
+        langSelectorBtn.classList.toggle('open')
     })   
 }
 
@@ -142,7 +142,8 @@ window.addEventListener('load', () => {
     // Add megamenu fn
     megamenuHandler()
 
-    //Add 
+    //Add lang switcher fn
+    langSwitcherHandler()
 
 })
 
