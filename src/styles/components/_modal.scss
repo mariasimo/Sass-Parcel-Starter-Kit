@@ -272,3 +272,13 @@
     color: #789;
     background-color: #cad6df!important;
 }
+
+.modal .fake-placeholder {
+    pointer-events: none;
+}
+
+.modal #query {
+    width: 100%;
+    height: 100%;
+    outline: none;
+}

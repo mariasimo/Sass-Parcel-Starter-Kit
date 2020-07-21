@@ -1,9 +1,9 @@
 // No touch screen detection
-function isTouchEnabled() { 
-    return ( 'ontouchstart' in window ) ||  
-           ( navigator.maxTouchPoints > 0 ) ||  
-           ( navigator.msMaxTouchPoints > 0 ); 
-} 
+function isTouchEnabled() {
+    return ('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0);
+}
 
 // Add class to open mobile menu
 function headerMenuToggle() {
@@ -59,6 +59,32 @@ function _toggleModal(e, searchModal) {
     searchModal.classList.toggle('modal-visible');
 }
 
+// Search engine mockup fn
+function searchHandler() {
+    const inputSearch = document.getElementById('query')
+    const inputSubmit = document.getElementById('query-submit')
+    const searchForm = document.getElementById('search-form')
+    const fakePlaceholder = document.querySelector('.fake-placeholder')
+
+    inputSearch.oninput = (e) => {
+        const q = e.target.value
+        if (q.length) {
+            fakePlaceholder.classList.add('hidden');
+            inputSubmit.removeAttribute('disabled')
+        } else {
+            fakePlaceholder.classList.remove('hidden')
+            inputSubmit.setAttribute('disabled', '')
+        }
+    }
+
+    searchForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        const q = inputSearch.value
+        if(q) {
+            window.location.href = `https://universidadeuropea.es/search?q=${q}`
+        }
+    })
+}
 
 window.addEventListener('load', () => {
 
@@ -74,6 +100,9 @@ window.addEventListener('load', () => {
 
     // Add class to open modal
     modalHandler()
-    
+
+    // Add search fn
+    searchHandler()
+
 })
 
