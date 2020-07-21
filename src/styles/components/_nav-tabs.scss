@@ -6,6 +6,18 @@
     bottom: 0;
     background-color: $ui-bg-01;
     z-index: 9999;
+    
+    &.sticky-tabs .inner {
+        ul li {
+            a {
+                margin-bottom: $s;
+                span {
+                opacity: 0;
+                }
+            }
+            padding: $xs $m;
+        }
+    }
 
     &.menu-is-open {
         z-index: 0;
@@ -20,11 +32,16 @@
                 display: flex;
                 align-items: center;
                 border-right: 1px solid $ui_line;
+                transition: padding .5s ease;
 
                 a {
+                    transition: margin .5s ease;
+
                     span {
                         @include navigation();
                         display: block;
+                        opacity: 1;
+                        transition: opacity .5s ease;
                     }
                     @include navigation_l();
                 }

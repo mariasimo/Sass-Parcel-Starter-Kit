@@ -128,12 +128,13 @@ function langSwitcherHandler() {
 function navTabsHandler() {
     const navTabs = document.querySelector('.nav-tabs')
 
-        // Three main sections
-        const hyplexLearningSection = document.getElementById('aprendizaje-hyplex')
-        const covidMeasuresSection = document.getElementById('medidas-sanitarias')
-        const ueExperienceSection = document.getElementById('experiencia-ue')
-    
-        const sections = [hyplexLearningSection, covidMeasuresSection, ueExperienceSection]
+    // Three main sections
+    const hyplexLearningSection = document.getElementById('aprendizaje-hyplex')
+    const covidMeasuresSection = document.getElementById('medidas-sanitarias')
+    const ueExperienceSection = document.getElementById('experiencia-ue')
+
+    const sections = [hyplexLearningSection, covidMeasuresSection, ueExperienceSection]
+
 
     window.addEventListener('scroll', (e) => {
         _changeCurrentTab(e, navTabs.offsetHeight, sections)
@@ -156,6 +157,16 @@ function _changeCurrentTab(e, navTabsHeight, sections) {
     navbarAllItems.forEach(item => {
         (item !== navbarItem) ? item.classList.remove('current') : item.classList.add('current')
     })
+}
+
+function _getStickyTab(e, navTabs) {
+    const navTabsTop = navTabs.getBoundingClientRect().top
+
+    if(navTabsTop <= 0) {
+        setTimeout(() => navTabs.classList.add('sticky-tabs'), 150)
+    } else {
+        setTimeout(() => navTabs.classList.remove('sticky-tabs'), 150)
+    }
 }
 
 
