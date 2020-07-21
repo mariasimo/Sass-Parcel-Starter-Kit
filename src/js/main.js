@@ -6,12 +6,15 @@ function isTouchEnabled() {
 }
 
 // Add class to open mobile menu
-function headerMenuToggle() {
+function headerMenuToggle(bodyTag) {
     const mobileHeader = document.querySelector('header .tablet-only')
     const openMenuBtn = mobileHeader.querySelector('.megamenu-mobile__trigger.header-btn')
+    const navTabs = document.querySelector('.nav-tabs ')
+    
     const toggleMenu = (menu) => {
         menu.classList.toggle('open');
         bodyTag.classList.toggle('menu-is-open');
+        navTabs.classList.toggle('menu-is-open');
     }
 
     openMenuBtn.addEventListener('click', () => toggleMenu(mobileHeader))
@@ -128,7 +131,7 @@ window.addEventListener('load', () => {
     bodyTag.classList.add(!isTouchEnabled() && 'no-touch-device')
 
     // Add class to open mobile menu
-    headerMenuToggle()
+    headerMenuToggle(bodyTag)
 
     // Add tabs functionality
     tabsHandler()

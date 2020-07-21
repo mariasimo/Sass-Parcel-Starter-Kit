@@ -485,7 +485,7 @@ header .megamenu-mobile.open {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 3;
+    z-index: 10000; 
 }
 @media only screen and (max-width: 61.9375rem) {
     header .megamenu-mobile.open {
