@@ -114,7 +114,8 @@ header table td,
 header table td a,
 table header td,
 table td header a {
-    font: 0.9375rem Futura-Bold, sans-serif;
+    font: 0.9375rem $f_primary;
+    font-weight: $bold;
     line-height: 1.375rem;
     color: #9b9b9b;
     margin-bottom: 0.625rem;
@@ -313,7 +314,8 @@ header .menu-container__group {
     width: 70%;
 }
 header .menu-container__group a {
-    font: 0.9375rem Muli-Regular, sans-serif;
+    font-family: $f_secondary;
+    font-weight: $light;
     line-height: 1.125rem;
     display: block;
     float: left;
@@ -401,7 +403,8 @@ header .megamenu-mobile__content > ul > li.language-selector .two-line-link span
 header .megamenu-mobile__content > ul > li.language-selector a {
     border-bottom: none;
     font-size: 0.75rem;
-    font-family: Futura-Light, sans-serif;
+    font-family: $f_primary;
+    font-weight: $light;
     color: #666;
 }
 header .megamenu-mobile__content > ul > li a {
@@ -471,7 +474,8 @@ header .megamenu-mobile__content > ul > li.faded {
 }
 header .megamenu-mobile__content > ul > li.faded a {
     color: #666;
-    font: 0.75rem Futura-Light, sans-serif;
+    font: 0.75rem $f_primary;
+    font-weight: $light;
 }
 header .megamenu-mobile.open {
     background-color: #fff;
@@ -665,7 +669,8 @@ header .overlay-menu__content-inner ul li:not(:last-child) {
 }
 header .overlay-menu__close-btn {
     color: #000;
-    font: 0.8125rem Futura-Bold, sans-serif;
+    font: 0.8125rem $f_primary;
+    font-weight: $bold;
     line-height: 1.375rem;
     text-transform: uppercase;
     position: relative;
@@ -687,7 +692,8 @@ header .overlay-menu__close-btn:before {
 }
 header .overlay-menu__trigger {
     color: #9b9b9b;
-    font: 0.75rem Futura-Bold, sans-serif;
+    font: 0.75rem $f_primary;
+    font-weight: $bold;
     text-transform: uppercase;
 }
 header .overlay-menu__trigger:after {
@@ -936,7 +942,8 @@ header .top-menu__phone.collapsible-wrapper .collapsible-element {
     border: none;
 }
 header .top-menu__phone.collapsible-wrapper .collapsible-element__trigger {
-    font-family: Futura-Bold, sans-serif;
+    font-family: $f_primary;
+    font-weight: $bold;
     font-size: 0.875rem;
     line-height: 1rem;
     color: #1173af;
