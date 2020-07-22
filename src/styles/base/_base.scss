@@ -11,9 +11,22 @@ body {
 }
 
 .container-fluid {
-    max-width: $container;
-    margin: 0 auto;
     width: $full_width;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+
+    @include tablet {
+        max-width: calc(100% - 30px);
+        margin: 0 auto;
+        padding-left: $s;
+        padding-right: $s;
+    }
+
+    @include desktop {
+        max-width: $container;
+    }
 }
 
 .container-fluid-max {
@@ -21,13 +34,12 @@ body {
     margin: 0 auto;
     width: $max_width;
 }
-
 // Breakpoints copied from UE original styles
-@media only screen and (max-width: 78.75rem) {
-    .container-fluid {
-        max-width: calc(100% - 30px);
-    }
-}
+// @media only screen and (max-width: 78.75rem) {
+//     .container-fluid {
+//         max-width: calc(100% - 30px);
+//     }
+// }
 .container-fluid--small {
     max-width: 800px;
 }

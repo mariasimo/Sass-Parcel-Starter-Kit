@@ -11,12 +11,23 @@
     &.sticky-tabs .inner {
         ul li {
             a {
-                margin-bottom: $xm*0.75;
                 span {
-                opacity: 0;
+                    opacity: 0;
+                }
+                @include tablet {
+                    margin-bottom: $xm*0.75;
                 }
             }
-            padding: $xs $m;
+
+            padding: $s $xs;
+
+            @include tablet {
+                padding: $xs $xs;
+            }
+
+            @include desktop {
+                padding: $xs $m;
+            }
         }
     }
 
@@ -25,29 +36,60 @@
     }
 
     .inner {
+
         ul {
             display: flex;
 
             li {
-                padding: $m;
+                padding: $s $xs;
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 border-right: 1px solid $ui_line;
-                transition: padding .5s ease;
+                transition: all .5s ease;
+
+                @include small {
+                    padding: $xm $xs;
+                    justify-content: unset;
+                }
+
+                @include desktop {
+                    padding: $m;
+                }
 
                 a {
-                    transition: margin .5s ease;
-
+                    transition: all .5s ease;
+                    @include navigation_l();
+                    line-height: 1.5;
+                    display: none;
+                    
                     span {
                         @include navigation();
-                        display: block;
+                        display: none;
                         opacity: 1;
-                        transition: opacity .5s ease;
+                        transition: all .5s ease;
+                        line-height: 1.5;
+
+                        @include tablet {
+                            display: block;
+                        }
                     }
-                    @include navigation_l();
+
+                    @include small {
+                        display: block;
+                    }
                 }
                 img {
-                    margin-right: $s;
+                    margin-right: $xs;
+                    width: 2rem;
+
+                    @include tablet {
+                        width: auto;
+                    }
+
+                    @include desktop {
+                        margin-right: $s;
+                    }
                 }
 
                 &:after {
