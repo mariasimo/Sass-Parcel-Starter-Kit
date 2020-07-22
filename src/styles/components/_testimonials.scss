@@ -1,0 +1,54 @@
+.testimonials {
+    width: 100%;
+
+    .inner {
+        padding: $xl01 0;
+        position: relative;
+        display: flex;
+
+        .testimonials-card {
+            padding: $l $xl01;
+            top: 0;
+            transform: translateY(50%);
+            position: absolute;
+            display: flex;
+            align-content: center;
+            z-index: 99;
+            width: 60%;
+            min-height: 280px;
+
+            blockquote {
+                width: 75%;
+                margin: 0 auto;
+
+                &:before,
+                &:after {
+                    content: '';
+                    width: 2rem;
+                    height: 2rem;
+                    background-size: contain;
+                    display: inline-flex;
+                    background-repeat: no-repeat;
+                }
+                
+                &:before {
+                    background-image: url(/images/icons/icon-open-quote.svg);
+                    transform: translateX(-100%);
+                }
+                
+                &:after {
+                    background-image: url(/images/icons/icon-close-quote.svg);
+                    float: right;
+                    transform: translateY(-100%);
+                }
+            }
+            .quote {
+                margin-bottom: $xm;
+            }
+        }
+
+        .img-container {
+            margin-left: auto;
+        }
+    }
+}

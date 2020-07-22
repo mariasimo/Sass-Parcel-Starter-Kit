@@ -22,15 +22,16 @@
 @import './components/card';
 @import './components/links';
 @import './components/modal';
+@import './components/testimonials';
+@import './components/hyplex';
+@import './components/figures';
+@import './components/covid-measures';
+@import './components/ue-experience';
+@import './components/disclaimer-banner';
 
 // Layout
 @import './layout/header';
 @import './layout/footer';
-@import './layout/hyplex';
-@import './layout/figures';
-@import './layout/covid-measures';
-@import './layout/ue-experience';
-@import './layout/disclaimer-banner';
 
 // Pages
 @import './pages/home';
