@@ -1,16 +1,20 @@
 
 @font-face {
     font-family: "Futura";
-    src: url("../fonts/futura/futura_bold.woff2") format("woff2");
+    src: url("../fonts/futura/Futura-Bold.woff2") format("woff2");
     font-weight: 600;
     font-style: normal;
+}
 
+@font-face {
     font-family: "Futura";
     src: url("../fonts/futura/futura_medium.woff2") format("woff2");
     font-weight: 500;
     font-style: normal;
+}
 
 
+@font-face {
     font-family: "Futura";
     src: url("../fonts/futura/futura_light.woff2") format("woff2");
     font-weight: 200;
