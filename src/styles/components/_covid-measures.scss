@@ -1,16 +1,28 @@
 .covid-measures-module {
     .inner {
-        padding: $xl02 0;
+        padding: $l 0;
+
+        @include small {
+            padding: $xl01 0;
+        }
+        @include tablet {
+            padding: $xl02 0;
+        }
 
         .header-item {
-            
+            margin-bottom: $l;
+
+            @include tablet {
+                margin-bottom: 0;
+            }
+
             .title-row {
                 display: flex;
                 align-items: flex-start;
                 margin-bottom: $s;
 
                 .title {
-                    max-width: 18rem;
+                    max-width: 17rem;
                 }
                 img {
                     margin-right: $xm;
@@ -18,25 +30,53 @@
             }
 
             p {
-                width: 85%;
+                width: 100%;
+
+                @include desktop {
+                    width: 85%;
+                }
             }
         }
 
         .covid-measure-item {
             margin: 0 auto;
-            margin-bottom: $xl02;
+            margin-bottom: $m;
             text-align: center;
 
+            @include small {
+                margin-bottom: $l;
+            }
+
+            @include desktop {
+                margin-bottom: $xl02;
+            }
+
+            &:nth-last-child(-n+3) {
+                margin-bottom: 0;
+            }
+
             img {
-                margin-bottom: $xm;
+                margin-bottom: $s;
+                
+                @include small {
+                    margin-bottom: $xm;
+                }
             }
             .title {
-                margin-bottom: $s;
+                margin-bottom: $xs;
+
+                @include small {
+                    margin-bottom: $s;
+                }
             }
             .text{
-                width: 85%;
                 text-align: center;
                 margin: 0 auto;
+                width: 100%;
+
+                @include small {
+                    width: 85%;
+                }
             }
         }
     }
