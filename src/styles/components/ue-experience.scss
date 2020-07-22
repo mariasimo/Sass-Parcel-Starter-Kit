@@ -1,6 +1,13 @@
 .ue-experience-module {
     .inner {
-        padding: $xl02 0;
+        padding: $l 0;
+
+        @include small {
+            padding: $xl01 0;
+        }
+        @include tablet {
+            padding: $xl02 0;
+        }
 
         .header-item {
             margin-bottom: $l;
@@ -8,30 +15,61 @@
 
             .title-row {
                 display: flex;
-                align-items: flex-start;
+                align-items: center;
                 margin-bottom: $s;
 
-                .title {
-                    max-width: 18rem;
+                @include desktop {
+                    align-items: flex-start;
+                    
+                    .title {
+                        max-width: 18rem;
+                    }
                 }
+
                 .standfirst {
                     margin-bottom: $xm;
                     color: transparentize($color: $text-high-emphasis, $amount: 0.2)
                 }
                 img {
-                    margin-right: $xm;
+                    margin-right: $s;
+
+                    @include desktop {
+                        margin-right: $xm;
+                    }
                 }
             }
 
-            p { width: 85%; }
+            p {
+                width: 100%;
+
+                @include desktop {
+                    width: 85%;
+                }
+            }
         }
 
         .content.cards {
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start;
 
-            .text {
-                margin-bottom: $s;
+            > div {
+                display: flex;
+                justify-content: flex-end; 
+                margin-bottom: $m;
+            
+              
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                @include tablet {
+                    margin-bottom: 0;
+                }
+
+            }    
+
+            @include desktop {
+                justify-content: flex-end; 
             }
         }
 

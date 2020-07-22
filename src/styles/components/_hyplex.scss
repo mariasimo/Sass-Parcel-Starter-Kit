@@ -72,8 +72,12 @@
                 }
 
                 img {
-                    margin-right: $xm;
+                    margin-right: $s;
                     margin-bottom: $xs;
+
+                    @include tablet {
+                        margin-right: $xm;
+                    }
                 }
 
                 .content-text {

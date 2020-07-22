@@ -3,12 +3,21 @@
     flex-wrap: wrap;
     flex: 1 1 auto;
     flex-direction: column; 
-
+    background-color: $ui-bg_01;
+    box-shadow: $shadow_02;
+    
+    @include desktop {
+        margin-bottom: 0;
+    }
+    
+    .text {
+        margin-bottom: $s;
+    }
 
     img {
         width: 100%;
         display: flex;
-        height: 10rem;
+        min-height: 10rem;
     }
 
    .card-content {
@@ -24,11 +33,23 @@
         }
 
     }
-
+        
     &.card-with-button {
+        transition: transform ease-out .25s;
+
+        &:hover{
+            transform: translateY(-4px) scale(1.005);
+            
+            .card-content,
+            .button {
+                background-color: $ui-bg_03;
+            }
+        }
+
         .card-content {
             padding: $xm;
             padding-bottom: $xs;
+            transition: background-color ease-out .25s;
         }
 
         .button {
@@ -43,3 +64,4 @@
         }
     }
 }
+
