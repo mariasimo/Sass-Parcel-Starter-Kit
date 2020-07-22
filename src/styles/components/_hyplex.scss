@@ -2,22 +2,47 @@
     width: 100%;
 
     .inner {
-        padding: $m 0 $l;
+        padding: 0;
+
+        &.container-fluid-max {
+            width: $full_width;
+        }
+
+        @include small {
+            padding: $m 0 $l;
+
+            &.container-fluid-max {
+                width: $max_width;
+            }
+        }
 
         .intro {
             display: flex;
             position: relative;
-            height: 30rem;
+            height: auto;
+            
+            @include small {
+                height: 30rem;
+            }
 
             .img-container {
                 margin-left: auto;
+                height: 14rem;
+            
+                @include small {
+                    height: 100%;
+                }
 
                 .bg-img {
                     height: 100%;
-                    background-size: contain;
+                    background-size: cover;
                     background-repeat: no-repeat;
                     background-position: top right;
                     background-image: url(/images/hyplex-girl-student-bg.jpg);
+
+                    @include small {
+                        background-size: contain;
+                    }
 
                     @include desktop {
                         background-position: center right;
@@ -27,21 +52,33 @@
             }
 
             .hyplex-card {
-                max-width: 750px;
-                padding: $l $m;
-                top: 0;
-                transform: translateY(50%);
-                position: absolute;
-                display: flex;
+                position: relative;
+                padding: $m;
+                transform: translateY(-10%);
+                max-width: 90%;
+                margin: 0 auto;
                 align-items: flex-start;
-                z-index: 99;
+                display: flex;
+                flex-direction: column;
+
+                @include small {
+                    padding: $l $m;
+                    position: absolute;
+                    top: 0;
+                    transform: translateY(50%);
+                    max-width: 750px;
+                    z-index: 99;
+                    flex-direction: row;
+                }
 
                 img {
                     margin-right: $xm;
+                    margin-bottom: $xs;
                 }
 
                 .content-text {
-                    width: 560px;
+                    width: 100%;
+                    max-width: 560px;
                     
                     .title {
                         margin-bottom: $s*.75;
