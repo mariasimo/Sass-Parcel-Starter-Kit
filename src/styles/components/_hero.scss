@@ -1,36 +1,108 @@
 .hero {
-    min-height: 60vh;
     border-top: 1px solid $ui_line;
+    padding-top: 60px;
+
+    @include desktop {
+        padding-top: 0;
+        min-height: 60vh;
+    }
 
     .inner {
-        padding: $m 0;
+        padding: 0;
         display: flex;
         position: relative;
         justify-content: flex-end;
+        margin: 0;
+        max-width: 100%;
+
+        @include desktop {
+            padding: $m $xm;
+            margin: 0;
+            max-width: calc(100% - 30px)
+        }
 
         .hero-card {
-            padding: $l $m;
-            position: absolute;
+            position: relative;
+            transform: none;
             left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            margin-top: -$m;
+            top: 0;
+            margin: 0 auto;
+            padding: $l $s $m;
+            
+            @include small {
+                padding: $xl01 $m;
+            }
+
+            @include desktop {
+                padding: $l $m;
+                position: absolute;
+                left: 2%;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-top: -$m;
+                z-index: 1;
+            }
 
             .title {
-                margin-bottom: $m;
+                margin-bottom: $s;
+                
+                @include small {
+                    margin-bottom: $m;
+                }
+            }
+            
+            .title,
+            p {
+                max-width: 30rem;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             &:after {
                 content: '';
                 width: 100%;
-                height: $m;
                 position: absolute;
-                left: 0;
-                right: 0;
-                bottom: -$m * 0.95;
+                height: $m;
                 background: url('/images/paper-red.svg');
                 background-repeat: no-repeat;
                 background-size: cover;
+                transform-origin: right;
+                top: 100%;
+                left: 0;
+                right: 0;
+                bottom: -$m * 0.95;
+                z-index: 1;
+
+                @include tablet {
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    transform: rotate(-90deg);
+                    top: 0;
+                }
+
+                @include desktop {
+                    height: $m;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    bottom: -$m * 0.95;
+                    background: url('/images/paper-red.svg');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    transform: none;
+                }
+
+              
+            }
+        }
+
+        .img-container {
+            align-self: stretch;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
             }
         }
     }
