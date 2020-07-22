@@ -6,9 +6,15 @@
         min-height: 24rem;
     }
 
+    .inner {
+        padding: $l 0 $m;
+
+        @include small {
+            padding: $xl02 0;
+        }
+    }
     .inner, .row {
         height: 100%;
-        padding: $m 0 $s;
     }
 
     .content {
