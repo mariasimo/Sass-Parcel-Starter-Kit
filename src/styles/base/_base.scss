@@ -12,8 +12,14 @@ body {
 
 .container-fluid {
     max-width: $container;
-    width: 100%;
     margin: 0 auto;
+    width: $full_width;
+}
+
+.container-fluid-max {
+    max-width: $container;
+    margin: 0 auto;
+    width: $max_width;
 }
 
 // Breakpoints copied from UE original styles
