@@ -1180,21 +1180,3 @@ header .info-btn.btn-primary {
     }   
     display: block;
 }
-
-body.menu-is-open {
-    position: fixed; 
-    height: auto; 
-    width: 100%; 
-    overflow: hidden scroll; 
-    top: 0px; 
-    left: 0px;
-}
-
-body.modal-is-open {
-    position: fixed; 
-    height: auto; 
-    width: 100%; 
-    overflow: hidden; 
-    top: 0px; 
-    left: 0px;
-}
