@@ -126,6 +126,11 @@
     background-position: 40% 30%;
 
     .overlay {
-        background: linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 100%);
+        background: linear-gradient(-180deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 150%);
+
+                
+        @include small {
+            background: linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 100%);
+        }
     }
 }
