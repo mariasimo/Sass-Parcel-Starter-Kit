@@ -5,11 +5,6 @@
     flex-direction: column; 
     background-color: $ui-bg_01;
     box-shadow: $shadow_02;
-
-    &:hover{
-        transform: translateY(-4px) scale(1.005);
-        background-color: $ui-bg_03;
-    }
     
     @include desktop {
         margin-bottom: 0;
@@ -40,6 +35,11 @@
         
     &.card-with-button {
         transition: transform ease-out .25s;
+
+        &:hover{
+            transform: translateY(-4px) scale(1.005);
+            background-color: $ui-bg_03;
+        }
 
         .card-content {
             padding: $xm;
