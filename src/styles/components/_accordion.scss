@@ -1,6 +1,10 @@
 .accordion {
     width: 100%;
     display: flex;
+
+    .inner {
+        padding: $m 0 $l;
+    }
     
     @include tablet {
         display: none;
