@@ -17,7 +17,8 @@
     img {
         width: 100%;
         display: flex;
-        min-height: 10rem;
+        max-height: 10rem;
+        object-fit: cover;
     }
 
    .card-content {
