@@ -61,32 +61,31 @@
                         mix-blend-mode: luminosity;
                     }
                 }
-            }
-
-            &.current {
-                .accordion-btn {
+                &.current {
                     a {
                         color: $text-high-emphasis;
                     }
                     img {
                         mix-blend-mode: unset;
                     }
+                }            
+    
+                &.current:before,
+                &:hover:before {
+                    right: 0;
+                    height: 100%;
+                    opacity: 1;
+                    transition: all 0.25s ease-out;
                 }
-            }            
-
-            &.current .accordion-btn:before,
-            &:hover .accordion-btn:before {
-                right: 0;
-                height: 100%;
-                opacity: 1;
-                transition: all 0.25s ease-out;
+    
+                &.current:before,
+                &.current:hover:before {
+    
+                    background-color: $interactive_main;
+                }
+    
             }
 
-            &.current .accordion-btn:before,
-            &.current .accordion-btn:hover:before {
-
-                background-color: $interactive_main;
-            }
 
             .accordion-content-item {
                 visibility: hidden; 

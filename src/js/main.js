@@ -207,35 +207,7 @@ function modalVideoHandler(bodyTag) {
 }
 
 
-
-// Search engine mockup fn
-function searchHandler() {
-    const inputSearch = document.getElementById('query')
-    const inputSubmit = document.getElementById('query-submit')
-    const searchForm = document.getElementById('search-form')
-    const fakePlaceholder = document.querySelector('.fake-placeholder')
-
-    inputSearch.oninput = (e) => {
-        const q = e.target.value
-        if (q.length) {
-            fakePlaceholder.classList.add('hidden');
-            inputSubmit.removeAttribute('disabled')
-        } else {
-            fakePlaceholder.classList.remove('hidden')
-            inputSubmit.setAttribute('disabled', '')
-        }
-    }
-
-    searchForm.addEventListener('submit', (e) => {
-        e.preventDefault()
-        const q = inputSearch.value
-        if (q) {
-            window.location.href = `https://universidadeuropea.es/search?q=${q}`
-        }
-    })
-}
-
-
+// Animate figures
 function animateFiguresHandler () {
 
     const figuresSection = document.querySelector('.figures-module')
@@ -257,6 +229,15 @@ function _animateAllFigures (figures) {
     })
 }
 
+// Add accordion functionality
+function accordionHandler() {
+    const accordionBtns = document.querySelectorAll('.accordion-btn')
+    const accordionContents = document.querySelectorAll('.accordion-content-item')
+
+    accordionBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => _switchContents(e, accordionBtns, accordionContents, 'current', 'current', 'data-accordionitem'))
+    })
+}
 
 
 window.addEventListener('load', () => {
@@ -291,5 +272,8 @@ window.addEventListener('load', () => {
 
     // Animate figures
     animateFiguresHandler()
+
+    // Add accordion fn
+    accordionHandler()
 })
 
