@@ -42,10 +42,14 @@
             }
             
             .link-card-content {
-                width: 85%;
+                width: 100%;
                 display: flex;
                 flex-direction: column;
                 height: 100%;
+
+                @include small {
+                    width: 85%;
+                }
 
                 .title {
                     margin-bottom: $xs;
