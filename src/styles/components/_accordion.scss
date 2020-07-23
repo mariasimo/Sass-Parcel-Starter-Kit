@@ -61,29 +61,29 @@
                         mix-blend-mode: luminosity;
                     }
                 }
-                &.current {
-                    a {
-                        color: $text-high-emphasis;
-                    }
-                    img {
-                        mix-blend-mode: unset;
-                    }
-                }            
-    
-                &.current:before,
-                &:hover:before {
-                    right: 0;
-                    height: 100%;
-                    opacity: 1;
-                    transition: all 0.25s ease-out;
+            }
+
+            &.current .accordion-btn {
+                a {
+                    color: $text-high-emphasis;
                 }
-    
-                &.current:before,
-                &.current:hover:before {
-    
-                    background-color: $interactive_main;
+                img {
+                    mix-blend-mode: unset;
                 }
-    
+            }            
+
+            &.current .accordion-btn:before,
+            &:hover .accordion-btn:before {
+                right: 0;
+                height: 100%;
+                opacity: 1;
+                transition: all 0.25s ease-out;
+            }
+
+            &.current .accordion-btn:before,
+            &.current .accordion-btn:hover:before {
+                transition: all 0.25s ease-out;
+                background-color: $interactive_main;
             }
 
 
@@ -92,27 +92,29 @@
                 opacity: 0;
                 width: 0;
                 height: 0;
-                margin-left: 24px;
+                transform: translateY(24px);
                 transition: none;
                 border-bottom: 1px solid $ui_line;
                 
-                &.current {
-                    padding: $m;
-                    opacity: 1;
-                    visibility: visible;
-                    width: 100%;
-                    margin-left: 0;
-                    transition: opacity .5s ease-in-out, margin .5s ease-in-out, visibility 1s ease-in-out;
-                    height: auto;
-                }
-    
                 .standfirst {
                     margin-bottom: $m;
                 }
             }
 
+            &.current .accordion-content-item {
+                padding: $m;
+                opacity: 1;
+                visibility: visible;
+                width: 100%;
+                transform: translateY(0);
+                transition: opacity .5s ease-in-out, transform .5s ease-in-out, visibility 1s ease-in-out;
+                height: auto;
+            }
 
-            &:last-child .accordion-btn {
+
+
+            &:not(.current):last-child .accordion-btn,
+            &:last-child .accordion-content-item {
                 border-bottom: 0;
             }
         }

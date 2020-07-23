@@ -39,6 +39,7 @@ function tabsHandler() {
 }
 
 function _switchContents(e, items, contents, cssClassContent, cssClassItem, attrName) {
+
     // Change items style
     const activeItem = e.currentTarget
     items.forEach(item => {
@@ -51,7 +52,8 @@ function _switchContents(e, items, contents, cssClassContent, cssClassItem, attr
     contents.forEach(content => {
         content.classList.remove(cssClassContent)
     })
-    activeContent.classList.add(cssClassContent)
+
+    activeContent.classList.toggle(cssClassContent)
 }
 
 // Add class to open modal search
@@ -231,14 +233,14 @@ function _animateAllFigures (figures) {
 
 // Add accordion functionality
 function accordionHandler() {
-    const accordionBtns = document.querySelectorAll('.accordion-btn')
-    const accordionContents = document.querySelectorAll('.accordion-content-item')
+    const accordionItems = document.querySelectorAll('.accordion-menu-item')
 
-    accordionBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => _switchContents(e, accordionBtns, accordionContents, 'current', 'current', 'data-accordionitem'))
+    accordionItems.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.currentTarget.classList.toggle('current')
+        })
     })
 }
-
 
 window.addEventListener('load', () => {
 
