@@ -59,8 +59,14 @@
                 }
                 .button {
                     margin-top: auto;
+                    
                     a{
                         color: $interactive-legacy;
+                        transition: color ease-out .25s;
+
+                        &:hover {
+                            color: $basic03
+                        }
                     }
                 }
             }

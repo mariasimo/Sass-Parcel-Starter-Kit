@@ -50,7 +50,11 @@
         .button {
             padding: $s $xm;
             border-top: 1px solid $ui-line;
+            transition: color ease-out .25s;
 
+            &:hover {
+                color: $basic03
+            }
         }
     }
 }

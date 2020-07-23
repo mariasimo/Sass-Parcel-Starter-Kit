@@ -19,7 +19,12 @@ button {
     padding: $xm $m;
     border-radius: $m;
     text-decoration: none;
+    transition: background-color ease-out .25s;
     @include button_text;
+
+    &:hover {
+        background-color: $basic01;
+    }
 }
 
 .btn-primary {
