@@ -1,4 +1,4 @@
-.hyplex-module {
+.hyflex-module {
     width: 100%;
 
     .inner {
@@ -38,7 +38,7 @@
                     background-size: cover;
                     background-repeat: no-repeat;
                     background-position: top right;
-                    background-image: url(/images/hyplex-girl-student-bg.jpg);
+                    background-image: url(/images/hyflex-girl-student-bg.jpg);
 
                     @include small {
                         background-size: contain;
@@ -51,7 +51,7 @@
                 }
             }
 
-            .hyplex-card {
+            .hyflex-card {
                 position: relative;
                 padding: $m;
                 transform: translateY(-10%);

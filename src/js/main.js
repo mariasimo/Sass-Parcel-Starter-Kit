@@ -136,11 +136,11 @@ function navTabsHandler() {
     const navTabs = document.querySelector('.nav-tabs')
 
     // Three main sections
-    const hyplexLearningSection = document.getElementById('aprendizaje-hyplex')
+    const hyflexLearningSection = document.getElementById('aprendizaje-hyflex')
     const covidMeasuresSection = document.getElementById('medidas-sanitarias')
     const ueExperienceSection = document.getElementById('experiencia-ue')
 
-    const sections = [hyplexLearningSection, covidMeasuresSection, ueExperienceSection]
+    const sections = [hyflexLearningSection, covidMeasuresSection, ueExperienceSection]
 
     // Change current class and add sticky styles
     window.addEventListener('scroll', (e) => {
