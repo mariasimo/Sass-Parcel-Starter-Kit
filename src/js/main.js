@@ -157,19 +157,23 @@ function navTabsHandler() {
 
 function _changeCurrentTab(e, navTabsHeight, sections) {
 
-    let navbarItem = document.querySelector('.nav-tabs li')
+    let navbarItem;
     const navbarAllItems = document.querySelectorAll('.nav-tabs li')
 
-    sections.forEach(section => {
-        const sectionIsInViewport = navTabsHeight > section.getBoundingClientRect().top && section.getBoundingClientRect().top + section.getBoundingClientRect().height > 0
-        if (sectionIsInViewport) {
-            navbarItem = document.getElementById(section.getAttribute('data-tab'))
-        }
-    })
+    let observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry =>  {
+            if( entry.isIntersecting) {
+                if (entry && entry.target.dataset.tab && navbarItem !== entry.target.dataset.tab ) {
+                    navbarItem = document.getElementById(entry.target.dataset.tab)
+                    navbarAllItems.forEach(item => {
+                        (item !== navbarItem) ? item.classList.remove('current') : item.classList.add('current')
+                    })
+                }
+            } 
+        })
+    }, {threshold: 0.5});
 
-    navbarAllItems.forEach(item => {
-        (item !== navbarItem) ? item.classList.remove('current') : item.classList.add('current')
-    })
+    sections.forEach(section =>  observer.observe(section))
 }
 
 function _getStickyTab(e, navTabs) {
