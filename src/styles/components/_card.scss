@@ -5,6 +5,11 @@
     flex-direction: column; 
     background-color: $ui-bg_01;
     box-shadow: $shadow_02;
+
+    &:hover{
+        transform: translateY(-4px) scale(1.005);
+        background-color: $ui-bg_03;
+    }
     
     @include desktop {
         margin-bottom: 0;
@@ -22,7 +27,6 @@
 
    .card-content {
         padding: $xm;
-        background-color: $ui-bg-01;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -37,30 +41,15 @@
     &.card-with-button {
         transition: transform ease-out .25s;
 
-        &:hover{
-            transform: translateY(-4px) scale(1.005);
-            
-            .card-content,
-            .button {
-                background-color: $ui-bg_03;
-            }
-        }
-
         .card-content {
             padding: $xm;
             padding-bottom: $xs;
-            transition: background-color ease-out .25s;
         }
 
         .button {
             padding: $s $xm;
             border-top: 1px solid $ui-line;
-            background-color: $ui-bg-01;
-            transition: background-color .25s ease-out;
 
-            &:hover {
-                background-color: transparentize($color: $ui-bg-01, $amount: 0.45);
-            }
         }
     }
 }
