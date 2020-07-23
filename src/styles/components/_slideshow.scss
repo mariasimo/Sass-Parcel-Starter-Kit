@@ -4,6 +4,17 @@
     position: relative;
     margin: auto;
 
+    > .inner {
+        padding: $l 0;
+
+        @include small {
+            padding: $xl01 0;
+        }
+        @include tablet {
+            padding: $xl02 0;
+        }
+    }
+
     &[data-direction="prev"] .slides{
         animation-name: slideInPrev;
         animation-duration: .5s;
@@ -25,7 +36,7 @@
         cursor: pointer;
         position: absolute;
         background-color: $ui-bg_02;
-        top: 50%;
+        top: 40%;
         width: auto;
         padding: 16px;
         font-weight: bold;
@@ -34,6 +45,10 @@
 
         &:hover {
             background-color:$ui-bg_03;
+        }
+
+        @include tablet {
+            top: 50%;
         }
     }
     
@@ -53,7 +68,7 @@
 
     @keyframes slideInPrev {
         from {
-            opacity: .4; 
+            opacity: 0; 
             transform: translateX(50%);
         }
         to {
@@ -63,7 +78,7 @@
     }
     @keyframes slideInNext {
         from {
-            opacity: .4; 
+            opacity: 0; 
             transform: translateX(-50%);
         }
         to {

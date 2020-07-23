@@ -2,24 +2,33 @@
     width: 100%;
 
     .inner {
-        padding: $xl01 0;
         position: relative;
         display: flex;
 
+        flex-direction: row-reverse;
+        padding: 0;
+        
         .testimonials-card {
-            padding: $l $xl01;
-            top: 0;
-            transform: translateY(50%);
-            position: absolute;
+            width: 100%;
+            padding: $m;
             display: flex;
             align-content: center;
             z-index: 99;
-            width: 60%;
-            min-height: 280px;
+            
+            @include desktop {
+                margin: $m 0;
+                z-index: 99;
+                position: absolute;
+                left: 0;
+            }
 
             blockquote {
-                width: 75%;
+                width: 100%;
                 margin: 0 auto;
+
+                @include tablet {
+                    width: 75%;
+                }
 
                 &:before,
                 &:after {
@@ -33,13 +42,21 @@
                 
                 &:before {
                     background-image: url(/images/icons/icon-open-quote.svg);
-                    transform: translateX(-100%);
+                    
+                    @include tablet {
+                        transform: translateX(-100%);
+                    }
                 }
                 
                 &:after {
                     background-image: url(/images/icons/icon-close-quote.svg);
                     float: right;
                     transform: translateY(-80%);
+                    display: none;
+
+                    @include tablet {
+                        display: block;
+                    }
                 }
             }
             .quote {
@@ -49,6 +66,11 @@
 
         .img-container {
             margin-left: auto;
+            display: flex;
+
+            img {
+                object-fit: cover;
+            }
         }
     }
 }
