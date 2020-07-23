@@ -26,6 +26,8 @@ body {
 
     @include desktop {
         max-width: $container;
+        margin: 0 auto;
+        width: $max_width;
     }
 }
 
@@ -34,12 +36,7 @@ body {
     margin: 0 auto;
     width: $max_width;
 }
-// Breakpoints copied from UE original styles
-// @media only screen and (max-width: 78.75rem) {
-//     .container-fluid {
-//         max-width: calc(100% - 30px);
-//     }
-// }
+
 .container-fluid--small {
     max-width: 800px;
 }

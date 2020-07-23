@@ -16,9 +16,16 @@
         max-width: 100%;
 
         @include desktop {
-            padding: $m $xm;
             margin: 0;
+            padding: $m $xm;
             max-width: calc(100% - 30px)
+        }
+        
+        @include large {
+            max-width: $container;
+            padding: $l 0;
+            margin: 0 auto;
+            
         }
 
         .hero-card {
@@ -41,6 +48,10 @@
                 transform: translateY(-50%);
                 margin-top: -$m;
                 z-index: 1;
+            }
+
+            @include large {
+                left: 0;
             }
 
             .title {
