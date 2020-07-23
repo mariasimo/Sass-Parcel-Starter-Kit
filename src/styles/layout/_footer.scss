@@ -337,3 +337,9 @@ footer .top-section {
         padding: 2.1875rem 0;
     }
 }
+
+// Tweaks
+footer .container-fluid {
+    max-width: calc(100% - 30px);
+    margin: 0 auto;
+}
