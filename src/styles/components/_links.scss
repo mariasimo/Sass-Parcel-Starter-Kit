@@ -1,11 +1,21 @@
 .additional-links {
     .inner {
-        padding: $xl02 0;
+        padding: $l 0;
+
+        @include small {
+            padding: $xl01 0;
+        }
+        @include tablet {
+            padding: $xl02 0;
+        }
 
         .header-item {
-            margin-bottom: $l;
+            margin-bottom: $m;
             position: relative;
 
+            @include tablet {
+                margin-bottom: $l;
+            }
 
             .title {
                 margin-bottom: $s;
@@ -21,6 +31,15 @@
             border-left: 1px solid $interactive-main;
             padding: $xs;
             padding-left: $s;
+            margin-bottom: $m;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include tablet {
+                margin-bottom: 0;
+            }
             
             .link-card-content {
                 width: 85%;
