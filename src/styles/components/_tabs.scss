@@ -1,13 +1,21 @@
 .tabs {
     width: 100%;
-    display: flex;
+    display: none;
     
-    .tab-content {
+    @include tablet {
         display: flex;
+    }
+
+    .tab-content {
         border: 1px solid $ui_line;
-        padding: $xl02;
-        padding-top: $xl04;
+        padding: $m;
+        padding-top: $xl02;
         flex: auto;
+
+        @include desktop {
+            padding: $xl02;
+            padding-top: $xl04;
+        }
 
         .tab-content-item {
             visibility: hidden; 
@@ -47,10 +55,14 @@
                 position: relative;
 
                 .inner {
-                    padding: $m $xm;
+                    padding: $s;
                     display: flex;
                     justify-content: space-between;
                     border-bottom: 1px solid $ui_line;
+
+                    @include desktop {
+                        padding: $m $xm;
+                    }
 
                     a {
                         width: 80%;
@@ -58,6 +70,7 @@
                     }
                     img {
                         mix-blend-mode: luminosity;
+                        margin-right: $xm;
                     }
                 }
 

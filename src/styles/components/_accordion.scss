@@ -1,0 +1,117 @@
+.accordion {
+    width: 100%;
+    display: flex;
+    
+    @include tablet {
+        display: none;
+    }
+    
+    .accordion-menu {
+        width: 100%;
+        border: 1px solid $ui_line;
+
+        .accordion-menu-item {
+            width: 100%;
+            
+            .accordion-btn {
+                position: relative;
+                padding: $s $xm;
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid $ui_line;
+                overflow: hidden;
+
+                a {
+                    width: 80%;
+                    color: $text-low-emphasis;
+                }
+
+                img {
+                    mix-blend-mode: luminosity;
+                    margin-right: $xm;
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    width: 0;
+                    height: 0%;
+                    width: 5px;
+                    transition: opacity .35s;
+                    opacity: 0;
+                }
+
+                &:hover {
+                    transition: all 0.25s ease-out;
+                    background-color: transparentize($color: $ui-bg-02, $amount: 0.65);
+                    cursor: pointer;
+    
+                    &:before {
+                        background-color: $interactive_disabled_contrast;
+                    }
+                    img {
+                        mix-blend-mode: luminosity;
+                    }
+                }
+            }
+
+            &.current {
+                .accordion-btn {
+                    a {
+                        color: $text-high-emphasis;
+                    }
+                    img {
+                        mix-blend-mode: unset;
+                    }
+                }
+            }            
+
+            &.current .accordion-btn:before,
+            &:hover .accordion-btn:before {
+                right: 0;
+                height: 100%;
+                opacity: 1;
+                transition: all 0.25s ease-out;
+            }
+
+            &.current .accordion-btn:before,
+            &.current .accordion-btn:hover:before {
+
+                background-color: $interactive_main;
+            }
+
+            .accordion-content-item {
+                visibility: hidden; 
+                opacity: 0;
+                width: 0;
+                height: 0;
+                margin-left: 24px;
+                transition: none;
+                border-bottom: 1px solid $ui_line;
+                
+                &.current {
+                    padding: $m;
+                    opacity: 1;
+                    visibility: visible;
+                    width: 100%;
+                    margin-left: 0;
+                    transition: opacity .5s ease-in-out, margin .5s ease-in-out, visibility 1s ease-in-out;
+                    height: auto;
+                }
+    
+                .standfirst {
+                    margin-bottom: $m;
+                }
+            }
+
+
+            &:last-child .accordion-btn {
+                border-bottom: 0;
+            }
+        }
+    }
+}
