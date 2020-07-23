@@ -242,6 +242,43 @@ function accordionHandler() {
     })
 }
 
+// Add slides fn
+function slidesHandler() {
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    const slideshow = document.querySelector('.slideshow-container')
+    const prev  = slideshow.querySelector('.prev')
+    const next  = slideshow.querySelector('.next')
+
+    prev.addEventListener('click', (e) => showSlides(slideIndex += 1, 'prev'))
+    next.addEventListener('click', (e) => showSlides(slideIndex -= 1, 'next'))
+
+    function showSlides(n, order) {
+        var i;
+        var slides = document.getElementsByClassName("slides");
+
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+        
+        if (order) {
+           if (order === 'prev') {
+               slideshow.setAttribute('data-direction', 'prev')
+           }
+
+           if (order === 'next') {
+            slideshow.setAttribute('data-direction', 'next')
+            }
+        }
+    }
+}
+
 window.addEventListener('load', () => {
 
     // Add class to body on no-touch-devices
@@ -277,5 +314,8 @@ window.addEventListener('load', () => {
 
     // Add accordion fn
     accordionHandler()
+
+    // Add slideshow fn
+    slidesHandler()
 })
 
