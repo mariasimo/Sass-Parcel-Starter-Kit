@@ -88,6 +88,13 @@ $xs: .5rem;
     }
 }
 
+
+@mixin smalltablet{
+  @media only screen and (min-width: 680px) {
+    @content;
+  }
+}
+
 @mixin tablet {
     @media only screen and (min-width: 768px) {
       @content;
@@ -104,6 +111,12 @@ $xs: .5rem;
     @media only screen and (min-width: 1200px) {
       @content;
     }
+}
+
+@mixin superlarge {
+  @media only screen and (min-width: 1500px) {
+    @content;
+  }
 }
 
 
