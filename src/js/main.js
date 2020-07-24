@@ -178,11 +178,18 @@ function _changeCurrentTab(e, navTabsHeight, sections) {
 
 function _getStickyTab(e, navTabs) {
     const navTabsTop = navTabs.getBoundingClientRect().top
+    const stickyHeader = document.querySelector('header')
 
     if (navTabsTop <= 0) {
-        setTimeout(() => navTabs.classList.add('sticky-tabs'), 150)
+        setTimeout(() => {
+            navTabs.classList.add('sticky-tabs');
+            stickyHeader.classList.add('hidden');
+        }, 150)
     } else {
-        setTimeout(() => navTabs.classList.remove('sticky-tabs'), 150)
+        setTimeout(() => {
+            navTabs.classList.remove('sticky-tabs')
+            stickyHeader.classList.remove('hidden');
+        }, 150)
     }
 }
 

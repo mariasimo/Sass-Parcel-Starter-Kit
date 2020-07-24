@@ -80,3 +80,9 @@ body {
 }
 
 
+.hidden {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: all ease .5s;
+}
