@@ -143,40 +143,35 @@ function navTabsHandler() {
     const ueExperienceSection = document.getElementById('experiencia-ue')
 
     const sections = [hyflexLearningSection, covidMeasuresSection, ueExperienceSection]
-
-    // Change current class and add sticky styles
-    window.addEventListener('scroll', (e) => {
-        _changeCurrentTab(e, navTabs.offsetHeight, sections)
-        _getStickyTab(e, navTabs)
-    })
+  
+    _getStickyTab(navTabs)
+    _changeCurrentTab(sections)
 
     // Smooth scroll behaviour
     _scrollToSections(navTabs.offsetHeight)
-
 }
 
-function _changeCurrentTab(e, navTabsHeight, sections) {
-
+function _changeCurrentTab(sections) {
     let navbarItem;
     const navbarAllItems = document.querySelectorAll('.nav-tabs li')
 
     let observer = new IntersectionObserver((entries) => {
         entries.forEach(entry =>  {
+
             if( entry.isIntersecting) {
-                if (entry && entry.target.dataset.tab && navbarItem !== entry.target.dataset.tab ) {
-                    navbarItem = document.getElementById(entry.target.dataset.tab)
-                    navbarAllItems.forEach(item => {
-                        (item !== navbarItem) ? item.classList.remove('current') : item.classList.add('current')
-                    })
-                }
+                navbarItem = document.getElementById(entry.target.dataset.tab)
+                console.log(navbarItem)
+                navbarAllItems.forEach(item => {
+                    (item !== navbarItem) ? item.classList.remove('current') : item.classList.add('current')
+                })
             } 
         })
-    }, {threshold: 0.5});
-
+    }, {threshold: 0, rootMargin: '0px 0px -90%'});
     sections.forEach(section =>  observer.observe(section))
 }
 
-function _getStickyTab(e, navTabs) {
+
+function _getStickyTab(navTabs) {
     const navTabsTop = navTabs.getBoundingClientRect().top
     const stickyHeader = document.querySelector('header')
 
@@ -188,8 +183,8 @@ function _getStickyTab(e, navTabs) {
     } else {
         setTimeout(() => {
             navTabs.classList.remove('sticky-tabs')
-            stickyHeader.classList.remove('hidden');
         }, 150)
+        stickyHeader.classList.remove('hidden');
     }
 }
 
@@ -198,8 +193,11 @@ function _scrollToSections(navTabsHeight) {
     const navbarAllItems = document.querySelectorAll('.nav-tabs li')
 
     navbarAllItems.forEach(item => {
-        item.addEventListener('click', () => {
+        item.addEventListener('click', (e) => {
             const tabContent = document.getElementById(item.getAttribute('data-content'))
+            navbarAllItems.forEach(item => item.classList.remove('current'));
+            e.currentTarget.classList.add('current');
+
             window.scrollBy({
                 top: tabContent.getBoundingClientRect().top - navTabsHeight / 2,
                 left: 0,
