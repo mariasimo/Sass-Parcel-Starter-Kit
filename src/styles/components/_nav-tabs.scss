@@ -41,16 +41,21 @@
             display: flex;
 
             li {
-                padding: $s $xs;
+                padding: $s $xs*.5;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 border-right: 1px solid $ui_line;
                 transition: all .5s ease;
 
+                flex-direction: column;
+                text-align: center;
+
                 @include small {
                     padding: $xm $xs;
                     justify-content: unset;
+                    flex-direction: row;
+                    text-align: left;
                 }
 
                 @include desktop {
@@ -59,9 +64,9 @@
 
                 a {
                     transition: all .5s ease;
-                    @include navigation_l();
-                    line-height: 1.5;
-                    display: none;
+                    @include navigation_s();
+                    font-weight: 400;
+                    line-height: 1.2;
                     
                     span {
                         @include navigation();
@@ -77,11 +82,19 @@
 
                     @include small {
                         display: block;
+                        @include navigation_l();
+                        font-weight: 600;
+                        line-height: 1.5;
                     }
                 }
                 img {
                     margin-right: $xs;
-                    width: 2rem;
+                    margin-bottom: $xs*.5;
+                    width: 1.6rem;
+
+                    @include small {
+                        margin-bottom: 0;
+                    }
 
                     @include tablet {
                         width: auto;
