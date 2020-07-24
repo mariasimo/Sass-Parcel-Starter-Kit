@@ -82,7 +82,7 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 transform-origin: right;
-                top: 100%;
+                top: 99%;
                 left: 0;
                 right: 0;
                 bottom: -$m * 0.95;
@@ -97,10 +97,10 @@
 
                 @include desktop {
                     height: $m;
-                    top: 100%;
+                    top: 99%;
                     left: 0;
                     right: 0;
-                    bottom: -$m * 0.95;
+                    bottom: -$m * 0.8;
                     background: url('/images/paper-red.svg');
                     background-repeat: no-repeat;
                     background-size: cover;
