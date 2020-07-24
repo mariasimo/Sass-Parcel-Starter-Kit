@@ -143,7 +143,7 @@ function navTabsHandler() {
     const ueExperienceSection = document.getElementById('experiencia-ue')
 
     const sections = [hyflexLearningSection, covidMeasuresSection, ueExperienceSection]
-  
+
     _getStickyTab(navTabs)
     _changeCurrentTab(sections)
 
@@ -156,18 +156,18 @@ function _changeCurrentTab(sections) {
     const navbarAllItems = document.querySelectorAll('.nav-tabs li')
 
     let observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry =>  {
+        entries.forEach(entry => {
 
-            if( entry.isIntersecting) {
+            if (entry.isIntersecting) {
                 navbarItem = document.getElementById(entry.target.dataset.tab)
                 console.log(navbarItem)
                 navbarAllItems.forEach(item => {
                     (item !== navbarItem) ? item.classList.remove('current') : item.classList.add('current')
                 })
-            } 
+            }
         })
-    }, {threshold: 0, rootMargin: '0px 0px -90%'});
-    sections.forEach(section =>  observer.observe(section))
+    }, { threshold: 0, rootMargin: '0px 0px -90%' });
+    sections.forEach(section => observer.observe(section))
 }
 
 
@@ -175,17 +175,22 @@ function _getStickyTab(navTabs) {
     const navTabsTop = navTabs.getBoundingClientRect().top
     const stickyHeader = document.querySelector('header')
 
-    if (navTabsTop <= 0) {
-        setTimeout(() => {
-            navTabs.classList.add('sticky-tabs');
-            stickyHeader.classList.add('hidden');
-        }, 150)
-    } else {
-        setTimeout(() => {
-            navTabs.classList.remove('sticky-tabs')
-        }, 150)
-        stickyHeader.classList.remove('hidden');
-    }
+    let observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                navTabs.classList.add('sticky-tabs');
+                stickyHeader.classList.add('hidden');
+            }, 150)
+        } else {
+            setTimeout(() => {
+                navTabs.classList.remove('sticky-tabs')
+            }, 150)
+            stickyHeader.classList.remove('hidden');
+        }
+    }, { threshold: 0, rootMargin: '0px 0px -100%' });
+    observer.observe(navTabs)
+
+
 }
 
 
@@ -219,22 +224,22 @@ function modalVideoHandler(bodyTag) {
 
 
 // Animate figures
-function animateFiguresHandler () {
+function animateFiguresHandler() {
 
     const figuresSection = document.querySelector('.figures-module')
     const figures = document.querySelectorAll('.figure-item .number')
 
     let observer = new IntersectionObserver(([entry]) => {
-        if(entry.isIntersecting) {
+        if (entry.isIntersecting) {
             _animateAllFigures(figures);
             observer.unobserve(figuresSection);
         }
-    }, {threshold: 1});
+    }, { threshold: 1 });
 
     observer.observe(figuresSection);
 }
 
-function _animateAllFigures (figures) {
+function _animateAllFigures(figures) {
     figures.forEach(figure => {
         animateValue(figure)
     })
@@ -258,8 +263,8 @@ function slidesHandler() {
 
     // Next/previous controls
     const slideshow = document.querySelector('.slideshow-container')
-    const prev  = slideshow.querySelector('.prev')
-    const next  = slideshow.querySelector('.next')
+    const prev = slideshow.querySelector('.prev')
+    const next = slideshow.querySelector('.next')
 
     prev.addEventListener('click', (e) => showSlides(slideIndex += 1, 'prev'))
     next.addEventListener('click', (e) => showSlides(slideIndex -= 1, 'next'))
@@ -268,21 +273,21 @@ function slidesHandler() {
         var i;
         var slides = document.getElementsByClassName("slides");
 
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
 
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
-        slides[slideIndex-1].style.display = "block";
-        
-        if (order) {
-           if (order === 'prev') {
-               slideshow.setAttribute('data-direction', 'prev')
-           }
+        slides[slideIndex - 1].style.display = "block";
 
-           if (order === 'next') {
-            slideshow.setAttribute('data-direction', 'next')
+        if (order) {
+            if (order === 'prev') {
+                slideshow.setAttribute('data-direction', 'prev')
+            }
+
+            if (order === 'next') {
+                slideshow.setAttribute('data-direction', 'next')
             }
         }
     }
