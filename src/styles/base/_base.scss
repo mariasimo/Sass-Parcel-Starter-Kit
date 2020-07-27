@@ -9,80 +9,9 @@ body {
     overflow-x: hidden;
     max-width: 100vw;
 
-    &.menu-is-open {
-        position: fixed; 
-        height: auto; 
-        width: 100%; 
-        overflow: hidden scroll; 
-        top: 0px; 
-        left: 0px;
-    }
-
-    &.modal-is-open {
-        overflow: hidden;
-    }
 }
 
-
-.container-fluid {
-    width: $full_width;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    max-width: 100%;
-
-    @include tablet {
-        max-width: calc(100% - 30px);
-        margin: 0 auto;
-        padding-left: $s;
-        padding-right: $s;
-    }
-
-    @include desktop {
-        max-width: $container;
-        margin: 0 auto;
-        width: $max_width;
-    }
+main {
+    padding: 3rem;
 }
 
-.container-fluid-max {
-    max-width: $container;
-    margin: 0 auto;
-    width: $max_width;
-}
-
-.container-fluid--small {
-    max-width: 800px;
-}
-@media only screen and (max-width: 800px) {
-    .container-fluid--small {
-        max-width: calc(100% - 30px);
-    }
-}
-
-
-.img-container {
-    width: 100%;
-
-    img {
-        width: 100%;
-    }
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-}
-
-
-.hidden {
-    display: none;
-    visibility: hidden;
-    opacity: 0;
-    transition: all ease .5s;
-}

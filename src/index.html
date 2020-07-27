@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Bienvenido al nuevo curso | Universidad Europea</title>
-    <meta name="description" content="Acogemos cada año más de 2.000 alumnos de 88 nacionalidades, favoreciendo un perfil más competitivo de nuestros estudiantes. 300 convenios internacionales.">
+    <title>Sass + Parcel Starter Kit</title>
+    <meta name="description" content="">
     <meta name="robots" content="index,follow">
 
 
@@ -17,21 +17,21 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="google-site-verification" content="FejtqBCOR3YAFaCA7aO_pnoc6Ajo5nnExz3aiBPaQvA">
+      <meta name="google-site-verification" content="">
                 
       <!-- Disable tap highlight on IE -->
       <meta name="msapplication-tap-highlight" content="no">
   
       <!-- Add to homescreen for Chrome on Android -->
       <meta name="mobile-web-app-capable" content="yes">
-      <meta name="application-name" content="Universidad Europea">
+      <meta name="application-name" content="Sass + Parcel Starter Kit">
   
       <!-- Add to homescreen for Safari on iOS -->
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta name="apple-mobile-web-app-status-bar-style" content="black">
-      <meta name="apple-mobile-web-app-title" content="Universidad Europea">
-      <link rel="shortcut icon" href="/images/favicon.ico">
-      <link rel="apple-touch-icon" href="/images/favicon_iOS.png">
+      <meta name="apple-mobile-web-app-title" content="Sass + Parcel Starter Kit">
+      <!-- <link rel="shortcut icon" href="/images/favicon.ico">
+      <link rel="apple-touch-icon" href="/images/favicon_iOS.png"> -->
   
       <!-- Tile icon for Win8 (144x144 + tile color) -->
       <meta name="msapplication-TileColor" content="#2F3BA2">
@@ -39,25 +39,13 @@
   </head>
   
   <body>
-    <include src="./partials/header.html"></include>
-
+    
     <main>
-      <include src="./partials/hero.html"></include>
-      <include src="./partials/nav-tabs.html"></include>
-      <include src="./partials/hyflex-mod.html"></include>    
-      <include src="./partials/video-banner.html"></include>    
-      <include src="./partials/figures-mod.html"></include>    
-      <include src="./partials/covid-measures-mod.html"></include>    
-      <include src="./partials/ue-experience-mod.html"></include>    
-      <include src="./partials/slideshow.html"></include>    
-      <include src="./partials/campus-banner.html"></include>    
-      <include src="./partials/links.html"></include>    
-      <include src="./partials/disclaimer-banner.html"></include> 
-      </main>
-
-    <include src="./partials/footer.html"></include>    
-    <include src="./partials/modal-search.html"></include>    
-    <include src="./partials/modal-video.html"></include>    
+      <include src="partials/main.html" locals='{
+          "title": "Sass + Parcel Starter kit",
+          "description": "Starter kit for quick projects with Parcel as a bundle"
+      }'></include>
+    </main>
 
     <script type="text/javascript" src="js/main.js"></script>
   </body>

@@ -1,9 +1,7 @@
 
 // Font family 
-@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
-
-$f_primary: 'Futura';
-$f_secondary: 'Muli', sans-serif;
+$f_primary: 'Arial';
+$f_secondary: 'Times';
 
 $lh_body: 1.3;
 $lh_large: 1.5;
@@ -22,15 +20,14 @@ $full_width: 100%;
 
 
 // Palette
-$brand01: #FF3126;
-$brand02: #1f1f1f;
+$brand01: blue;
+$brand02: black;
 
-$basic01: #3D8ECB;
-$basic02: #DE3831;
-$basic03: #1173af;
+$basic01: blue;
+$basic02: grey;
 
-$secondary01: #E7F3F7;
-$secondary02: #FFEDEB;
+$secondary01: pink;
+$secondary02: lightgrey;
 
 $ui01: #000;
 $ui02: #f5f5f5;
@@ -39,7 +36,7 @@ $ui-bg_01: #fff;
 $ui-bg_02: #f5f5f5;
 
 $ui-bg_03: #E7F3F7;
-$ui-bg_04: #DE3831;
+$ui-bg_04: red;
 
 $text_high_emphasis: #1f1f1f;
 $text_medium_emphasis: #262626;
@@ -48,14 +45,11 @@ $text_inverse: #fff;
 
 $text_header_links: #666;
 
-$interactive_main: #FF3126;
-$interactive_hover: #B41A13;
-$interactive_link: #DE3831;
+$interactive_main: blue;
+$interactive_hover: blue;
+$interactive_link: lightblue;
 $interactive_disabled: #f5f5f5;
-$interactive_disabled_contrast: rgb(182, 182, 182);
-
 $interactive_inverse: #fff;
-$interactive_legacy: #3D8ECB;
 
 $ui_decoration: #FF3126;
 $ui_line: #E8E8EA;
@@ -118,7 +112,3 @@ $xs: .5rem;
     @content;
   }
 }
-
-
-// Icons
-$icon_play: "images/icons/icon-play.svg"
